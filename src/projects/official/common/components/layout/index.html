@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>{{seo_info.seo_title}}</title>
+  <meta name="description" :content="seo_info.seo_description">
+  <meta name="keywords" :content="seo_info.seo_keywords">
+  <meta name="baidu-site-verification" content="1gZNPajgEd" />
+  <meta http-equiv="Cache-Control" content="no-transform " />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="applicable-device" content="pc">
+  <link rel="stylesheet" .href="fontUrl">
+  <link rel="stylesheet" href="../../styles/base.css">
+  <slot name="style" />
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js" __ie="<9"></script>
+  <script>
+    var API_URL = __get('API_URL');
+    var SITE_URL = __get('SITE_URL');
+    var CDN_URL = __get('CDN_URL');
+    var STATIC_URL = __get('STATIC_URL');
+    var SHOP_URL = __get('SHOP_URL');
+    var ACCOUNT_URL = __get('ACCOUNT_URL');
+    var SHOP_CART_URL = __get('SHOP_CART_URL');
+  </script>
+  <script src="../../vendors/jquery/jquery-1.12.4.min.js"></script>
+  <script src="../../scripts/base.js"></script>
+</head>
+
+<body>
+  <c:topbar />
+  <c:header .is-index="isIndex" />
+  <div class="container" *if="!nobreadcrumb">
+    <c:breadcrumb />
+  </div>
+  <slot />
+  <c:footer .nopad="nopad" />
+  <c:to-top />
+  <slot name="script" />
+  <div style="display:none;" *if="env==='production'">
+    <script src="https://s19.cnzz.com/z_stat.php?id=1264615083&web_id=1264615083" language="JavaScript"></script>
+    <script>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3fff07418d13987200b351b5180e18b3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  </div>
+</body>
+
+</html>

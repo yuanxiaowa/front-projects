@@ -1,0 +1,30 @@
+@import '../../../common/components/tab-u/index';
+.panel {
+  &__header {
+    font-size: 18px;
+    border-bottom: $border;
+    padding: $pad 0;
+  }
+}
+
+.channel-t1 {
+  margin-bottom: 24px;
+  img {
+    height: 60px;
+  }
+}
+
+.store {
+  margin: $pad 0;
+  .iconfont {
+    font-size: 24px;
+    margin-right: $pad;
+  }
+  &:hover .text-desc {
+    color: inherit;
+  }
+}
+
+.mt {
+  margin-top:66px
+}

@@ -1,0 +1,30 @@
+<!--产品搜索  -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/search.css" slot="style">
+  <script src="../scripts/search.js" slot="script"></script>
+  <c:search-layout action="product.html" .selected-index="1" typename="个产品">
+    <table class="search-prod">
+      <tbody>
+        <tr v-for="item in list">
+          <td class="sp-square">
+            <div class="row__left">
+              <a :href="item.description_url?item.description_url:item.welcome_url">
+                <c:imgp name="item" />
+              </a>
+            </div>
+            <div class="row__content">
+              <a :href="item.welcome_url">{{item.name}}</a>
+              <br>{{item.product_category_full_name}}
+            </div>
+          </td>
+          <td width="34%" class="text-right">
+            <a v-if="item.description_url" :href="item.description_url">概述</a>
+            <a v-if="item.goods_buy_url" :href="item.goods_buy_url">购买</a>
+            <a v-if="item.question_url" :href="item.question_url">常见问题</a>
+            <a v-if="item.instructions_url" :href="item.instructions_url">说明书</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </c:search-layout>
+</c:layout>

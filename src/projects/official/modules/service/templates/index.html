@@ -1,0 +1,171 @@
+<!--服务首页  -->
+<c:layout .nopad="true" .nobreadcrumb="true">
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <div class="banner">
+    <img src="../images/banner.png" alt="">
+    <div class="container">
+      <div class="banner__layer">
+        <h1>欢迎使用科沃斯服务</h1>
+        <c:searchbox hint="输入产品型号或您遇到的问题" action="/search/question.html" />
+      </div>
+    </div>
+  </div>
+  <svg style="display:none">
+    <symbol id="ic1" viewBox="0 0 44 44">
+      <rect x="7" y="11.94" width="17.05" height="1.54" transform="translate(31.05 25.43) rotate(180)" />
+      <rect x="7" y="17.02" width="14.04" height="1.78" transform="translate(28.04 35.81) rotate(180)" />
+      <rect x="7" y="22.22" width="11.03" height="1.75" transform="translate(25.03 46.2) rotate(180)" />
+      <path d="M20.31,36.37l-5-5,10.2-10.2a7.06,7.06,0,0,1,9.08-8.49L35.7,13l-4.24,4.24,2.91,2.91,4.24-4.24L39,17.09a7.06,7.06,0,0,1-8.49,9.08Zm-2.91-5,2.91,2.91,9.78-9.78.44.15a5.56,5.56,0,0,0,7.31-5.78L34.37,22.3l-5-5,3.47-3.47A5.56,5.56,0,0,0,27,21.11l.15.44Z"
+      />
+      <polygon points="36.3 38.75 4.25 38.75 4.25 6.25 36.3 6.25 36.3 12.24 34.8 12.24 34.8 7.75 5.75 7.75 5.75 37.25 34.8 37.25 34.8 27.28 36.3 27.28 36.3 38.75"
+      />
+    </symbol>
+    <symbol id="ic2" viewBox="0 0 44 44">
+      <path d="M42.67,38H.23V8.41H42.67ZM2.2,36H40.7V10.38H2.2Z" />
+      <rect x="21.68" y="29.38" width="16.57" height="1.58" transform="translate(59.92 60.34) rotate(-180)" />
+      <rect x="24.6" y="22.93" width="13.65" height="1.82" transform="translate(62.85 47.67) rotate(-180)" />
+      <rect x="27.53" y="16.61" width="10.72" height="1.79" transform="translate(65.77 35) rotate(-180)" />
+      <path d="M9.39,24.77,6.85,22.23A5.55,5.55,0,0,1,5.07,21a5.38,5.38,0,0,1-1.29-1.95,1.82,1.82,0,0,1,.27-2,1.82,1.82,0,0,1,2-.27A5.38,5.38,0,0,1,8,18.05a5.55,5.55,0,0,1,1.23,1.78l2.54,2.54Zm-4.2-6.68-.1,0a2.9,2.9,0,0,0,1,1.83,3.93,3.93,0,0,0,1.38.93l.16.06,1.71,1.71.28-.28L8,20.66,7.9,20.5A3.93,3.93,0,0,0,7,19.11,3.05,3.05,0,0,0,5.19,18.09Z"
+      />
+      <path d="M15.19,32.47l-5.14-5.14,3.51-3.51L14,24a2.94,2.94,0,0,0,1.14.17h.31l4,4Zm-3-5.14,3,3,2.17-2.17-2.54-2.54a5.13,5.13,0,0,1-.84-.12Z"
+      />
+      <path d="M7.5,32,3.74,28.27l7-7a5,5,0,0,1,6.51-5.92l1.15.39-3,3,1.64,1.64,3-3,.39,1.15a5,5,0,0,1-1.21,5.17h0A5,5,0,0,1,14.51,25ZM5.87,28.27,7.5,29.91l6.58-6.58.44.15a3.52,3.52,0,0,0,3.63-.85h0a3.52,3.52,0,0,0,1-2.28l-2.13,2.13L13.3,18.72l2.13-2.13a3.54,3.54,0,0,0-3.13,4.66l.15.44Z"
+      />
+    </symbol>
+    <symbol id="ic3" viewBox="0 0 44 44">
+      <path d="M14.52,16.77V14.94H29.94v1.83H24.09v4.36H29.3V23H24.09v5H30.5v1.69H13.75V28h2.53V19.09h2V28h3.8V16.77Z" />
+      <path d="M22.13,43.06,4.78,33V13L22.13,3,39.47,13V33ZM6.62,32l15.51,9,15.51-9V14.08l-15.51-9-15.51,9Z" />
+    </symbol>
+    <symbol id="ic4" viewBox="0 0 44 44">
+      <path d="M40,10.24H32.74L28.08,4.41,21,10.06,14,4.41,9.31,10.24H2.37V19H5V40H37.37V19H40ZM27.8,6.87l2.69,3.36H23.6Zm-13.56,0,4.2,3.36H11.55ZM4.12,17.24V12H20.31v5.25H4.12ZM6.75,19H20.31V38.24H6.75ZM35.62,38.24H22.06V19H35.62Zm2.63-21H22.06V12H38.25Z"
+      />
+    </symbol>
+    <symbol id="ic5" viewBox="0 0 44 44">
+      <path d="M21.55,1A21.17,21.17,0,1,0,42.72,22.17,21.2,21.2,0,0,0,21.55,1Zm0,40.34A19.17,19.17,0,1,1,40.72,22.17,19.19,19.19,0,0,1,21.55,41.34Z"/><rect x="19.51" y="27.11" width="3.1" height="2.93"/><path d="M21.94,12.47q-5.27-.17-6.36,4.68l2.59.84q.58-3.18,3.6-3a2.33,2.33,0,0,1,2.43,2.17q.25,1.76-2,3.26a4.9,4.9,0,0,0-2.43,4.27v.75h2.59v-.67a2.64,2.64,0,0,1,1.51-2.51q3.26-2.26,3.18-5Q26.62,12.72,21.94,12.47Z"/>
+    </symbol>
+    <symbol id="ic6" viewBox="0 0 44 44">
+      <rect x="9.87" y="12.68" width="17.5" height="1.93" transform="translate(37.24 27.29) rotate(180)"/><rect x="9.85" y="19.02" width="17.55" height="2.22" transform="translate(37.24 40.27) rotate(180)"/><rect x="9.87" y="25.53" width="17.5" height="2.18" transform="translate(37.24 53.24) rotate(180)"/><path d="M41,10.5H34V3H3.25V40H34V37.5h7ZM32,38H5.25V5H32Zm7-2.5H34.77v-23H39Z"/>
+    </symbol>
+  </svg>
+  <div class="container">
+    <div class="row service-feature">
+      <div class="col-1-5">
+        <a target="_blank" href="/userhelp/maintain">
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#ic1" />
+          </svg>
+          <p>在线报修</p>
+        </a>
+      </div>
+      <div class="col-1-5">
+        <a target="_blank" href="/userhelp/cards">
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#ic2" />
+          </svg>
+          <p>电子保修卡</p>
+        </a>
+      </div>
+      <div class="col-1-5">
+        <a href="/zhengpin">
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#ic3" />
+          </svg>
+          <p>正品验证</p>
+        </a>
+      </div>
+      <div class="col-1-5">
+        <a href="/service/instructions.html">
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#ic6" />
+          </svg>
+          <p>产品说明书</p>
+        </a>
+      </div>
+      <div class="col-1-5">
+        <a href="/service/question.html">
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="#ic5" />
+          </svg>
+          <p>常见问题</p>
+        </a>
+      </div>
+    </div>
+    <div class="row service-l">
+      <div class="col-6" v-for="item in ad_list">
+        <a class="img-ratio" :href="item.url" :target="item.link_target">
+          <img :src="item.img">
+        </a>
+      </div>
+    </div>
+    <h2>产品支持</h2>
+    <div class="row service-p">
+      <div class="col-3 thumbnail" .for="item in [
+          {'title':'DEEBOT地宝', 'desc':'扫地机器人', 'img':'deebot.png', 'url':'/service/product-deebot.html'},
+          {'title':'WINBOT窗宝', 'desc':'擦窗机器人', 'img':'winbot.png', 'url':'/service/product-winbot.html'},
+          {'title':'ATMBOT沁宝', 'desc':'沁宝机器人', 'img':'atmbot.png', 'url':'/service/product-atmbot.html'},
+          {'title':'UNIBOT管家', 'desc':'管家机器人', 'img':'unibot.png', 'url':'/service/product-unibot.html'}
+        ]">
+        <a .href="item.url" target="_blank">
+          <img .src="'../images/'+item.img">
+          <div class="thumbnail__title">{%item.title%}</div>
+          <div class="text-gray">{%item.desc%}</div>
+        </a>
+      </div>
+    </div>
+    <h2>使用帮助</h2>
+    <div class="row service-h">
+      <div class="col-3" v-for="item,i in help_links">
+        <ul class="list">
+          <li>
+            <span class="icon" :class="'icon'+(i+5)"></span>
+          </li>
+          <li class="list__title">{{item.title}}</li>
+          <li class="list__item" v-for="subitem in item.items">
+            <a class="link" :href="subitem.url" target="_blank">{{subitem.title}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="service-about">
+    <div class="container">
+      <h2>联系我们</h2>
+      <div class="row">
+        <div class="col-1-5 thumbnail">
+          <a href="/store">
+            <span class="icon icon9"></span>
+            <div class="thumbnail__title">专卖店</div>
+            <div class="text-gray">600+专卖店</div>
+          </a>
+        </div>
+        <div class="col-1-5 thumbnail">
+          <a href="/network">
+            <span class="icon icon10"></span>
+            <div class="thumbnail__title">服务网点</div>
+            <div class="text-gray">100+服务网点</div>
+          </a>
+        </div>
+        <div class="col-1-5 thumbnail">
+          <span class="icon icon11"></span>
+          <div class="thumbnail__title">服务热线 {%teleNum%}</div>
+          <div class="text-gray">周一至周日 9:00-20:00</div>
+        </div>
+        <div class="col-1-5 thumbnail">
+          <c:kefu>
+            <span class="icon icon12"></span>
+            <div class="thumbnail__title">在线咨询客服</div>
+            <div class="text-gray">周一至周日 9:00-20:00</div>
+          </c:kefu>
+        </div>
+        <div class="col-1-5 thumbnail">
+          <div class="service-about__layer">
+            <img src="../../../common/components/footer/qrc-weixin.png" alt="">
+          </div>
+          <span class="icon icon13"></span>
+          <div class="thumbnail__title">关注微信公众号</div>
+          <div class="text-gray">直接对话微信客服</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</c:layout>

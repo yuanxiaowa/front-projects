@@ -1,0 +1,166 @@
+.zp {
+  margin-top: 50px;
+  &-wrap {
+    width: 340px;
+    margin: 20px auto 0;
+  }
+  h1 {
+    color: $color-primary;
+    font-weight: normal;
+    text-align: center;
+  }
+  .form-control {
+    border-color: #d6d6d6;
+  }
+  .btn--primary {
+    margin: 16px 0;
+    width: 100%;
+  }
+  &-bottom {
+    border-top: 1px solid #d6d6d6;
+    margin: 145px 0 100px;
+  }
+  &-link {
+    display: inline-block;
+    margin-top: 1em;
+    text-decoration: underline;
+  }
+  &-red {
+    color: #ed093e;
+    margin-bottom: 30px;
+  }
+  &-mid {
+    margin: 20px 0 16px;
+  }
+}
+
+.text-link {
+  &:link,
+  &:visited {
+    color: $color-primary;
+    text-decoration: underline;
+  }
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  &--primary {
+    color: #fff $color-primary;
+    line-height: 46px;
+  }
+  &--dotted {
+    line-height: 40px;
+    padding: 0 1em;
+    color: $color-primary;
+    border: 1px solid;
+    img {
+      vertical-align: middle
+    }
+  }
+}
+.has-error {
+  display: block;
+  color: red;
+  padding-top: 5px;
+}
+
+/* a.u-btn,
+button.u-btn {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  text-align: center;
+  width: 100px;
+  background-color: #ee0a3b;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  cursor: pointer
+}
+
+.u-btn.large {
+  width: 150px;
+  height: 35px;
+  line-height: 35px
+}
+
+.zp-main {
+  margin: 100px 0;
+  overflow: hidden;
+  .f-item {
+    padding-bottom: 10px;
+    span.error {
+      display: block;
+      color: red;
+      padding-top: 5px;
+    }
+  }
+  .sn_main {
+    float: left;
+    width: 335px;
+    color: #666
+  }
+  .sn_main__title {
+    font-size: 18px;
+  }
+  .sn_main__input {
+    border: 1px solid #ccc;
+    padding: 3px 10px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #a0a0a0;
+  }
+  .sn_main .u-btn {
+    width: 150px;
+    height: 35px;
+    line-height: 35px;
+  }
+  .sn_desc {
+    padding-left: 50px;
+    border-left: 1px solid #ddd;
+    color: #666;
+  }
+  .sn_desc p {
+    font-size: 14px;
+    font-weight: 400;
+    height: 20px;
+    line-height: 20px;
+  }
+  .sn_desc__title {
+    font-size: 18px
+  }
+  .sn_desc .u-btn {
+    margin-top: 10px;
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+  }
+}
+
+.sn_result {
+  overflow: hidden;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.sn_result .sn_title_red {
+  color: red;
+  padding: 5px 0;
+}
+
+.sn_result .f-action {
+  margin-top: 20px;
+}
+
+.sn_result .f-action .u-btn {
+  width: 150px;
+  height: 35px;
+  line-height: 35px;
+}
+
+.sn_result .u-btn.openChatBox {
+  margin-left: 10px;
+} */

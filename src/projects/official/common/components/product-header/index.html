@@ -1,0 +1,24 @@
+<div class="service-param">
+  <div class="container">
+    <div class="l-table l-table--av service-param__wrap">
+      <div class="l-table__item">
+        <div class="service-param__img">
+          <c:imgp name="product_info" />
+        </div>
+        <h1 class="service-param__title">{{product_info.name}}</h1>
+      </div>
+      <ul class="l-table__item text-right list list--h">
+        <li class="list__item" .v-if="'product_info.'+item[1]" *class="i===selectedIndex?'is-selected':''" .for="item,i in [
+            ['概述','description_url'],
+            ['参数','parameter_url'],
+            ['服务与支持','welcome_url']
+          ]">
+          <a class="link" .:href="'product_info.'+item[1]" .text="item[0]"></a>
+        </li>
+        <li class="list__item">
+          <a v-if="product_info.goods_buy_url" :href="product_info.goods_buy_url" class="service-param__btn">购买</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

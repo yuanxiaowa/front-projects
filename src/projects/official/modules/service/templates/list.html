@@ -1,0 +1,39 @@
+<!--产品列表  -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/list.css" slot="style">
+  <div class="choice-tab">
+    <div class="container row">
+      <div class="row__right">
+        <c:searchbox hint="请输入产品型号" daction="search_url" value="keyword" />
+      </div>
+      <div class="row__content">
+        <a class="choice-tab__item" v-for="item in category_list" :class="{'is-selected':item.selected}" :href="item.link">
+          {{item.name}}
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="list-emtpy" v-if="count===0">
+      <p class="list-emtpy__top">
+        <c:icon name="baoqian" />
+      </p>
+      <p class="list-empty__desc" v-if="keyword">抱歉，没有搜索到与“
+        <span class="list-emtpy__kw">{{keyword}}</span>”相关的结果，请检查输入的产品型号是否有误。</p>
+      <p class="list-empty__desc" v-else>没有相关产品！</p>
+      <p class="list-emtpy__bottom">
+        <a href="/userhelp/sproduct">如何查找产品型号</a>
+      </p>
+    </div>
+    <div v-else class="choice-list row">
+      <a v-for="item in list" :href="item.link" class="col-3 choice-list__item">
+        <c:imgp name="item" alt="concat(item.product_category_full_name,' ',item.name)" />
+        <div class="choice-list__text">
+          {{item.product_category_full_name}}
+          <div class="choice-list__name">{{item.name}}</div>
+        </div>
+      </a>
+    </div>
+    <c:pagination />
+  </div>
+</c:layout>

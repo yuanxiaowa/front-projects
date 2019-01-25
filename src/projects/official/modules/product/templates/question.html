@@ -1,0 +1,16 @@
+<!--常见问题列表页  -->
+<c:layout-service>
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <h2>
+    <c:icon name="doc" />常见问题
+  </h2>
+  <_ v-if="list">
+    <div class="list list--1">
+      <div class="list__item" v-for="item in list">
+        <a target="_blank" class="link" :href="item.url">{{item.title}}</a>
+      </div>
+    </div>
+    <c:pagination />
+  </_>
+  <div v-else class="text-gray">相关内容正在更新中 ，请稍后查看~</div>
+</c:layout-service>

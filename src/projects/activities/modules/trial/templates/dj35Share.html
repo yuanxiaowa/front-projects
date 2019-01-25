@@ -1,0 +1,68 @@
+<c:layout>
+  <link rel="stylesheet" type="text/css" href="../styles/trial.css" __main>
+  <div class="wrap-full j-wrap">
+    <div class="wrap-con">
+      <div class="trial-title">
+        <h1>感恩•筑梦</h1>
+      </div>
+      <div class="tc">
+        <span class="witness-star j-star"></span>
+        <span class="head">
+          <img :src="oauth_avatar" id="avatar">
+        </span>
+        <span class="witness-num j-num">{{total_score}}</span>
+      </div>
+      <div class="form-line tc">
+        <div class="witness-time" v-if="past_due">本期活动已经结束，下期活动即将开启</div>
+        <div class="witness-time j-countdown" v-else>离活动截止还有
+          <span>00</span> 天
+          <span>00</span> 小时
+          <span>00</span> 分钟
+        </div>
+      </div>
+      <div class="form-line tc">
+        <button class="btn-dotted btn--witness j-witness">为TA助力</button>
+      </div>
+      <div class="form-line">
+        <a :href="WECHAT_URL+'/wechat/trial/dj35'" class="btn-normal btn--witness j-sign">我要报名</a>
+      </div>
+      <!-- <div class="tc">
+        <a href="//m.ecovacs.cn/product-2094.html?utm_source=guanye&utm_medium=xian&utm_campaign=mfcs">
+        </a>
+      </div> -->
+      <div class="tc">
+        <a class="link-dark j-show-dialog" href="">活动规则</a>
+      </div>
+      <div class="form-line tc">
+        <img src="../images/product.png" class="product-img">
+      </div>
+      <a class="link-dark j-show-dialog2" style="position: absolute;top:1em;right:3em">排行榜</a>
+    </div>
+    <c:dialog js-export="{default as setDialog,$mask}" id="dialog">
+      <include src="partials/rule.html"></include>
+    </c:dialog>
+    <c:dialog id="dialog2" style="width:70%">
+      <h3>排行榜</h3>
+      <ul>
+        <li>正在加载中...</li>
+      </ul>
+    </c:dialog>
+    <img id="share" src="../images/trial-share.png" alt="" class="trial-share">
+    <include src="partials/bottom.html" />
+    <script>
+      window.WECHAT_URL = __get('WECHAT_URL|json');
+      window.jsSDKConfigCondition = __get('jsSDKConfigCondition')
+      window.jsSDKConfigJSON = __get('jsSDKConfigJSON');
+      window.openid = __get('openid|json');
+      window.CDN_URL = __get('CDN_URL|json');
+      window.link = __get('link|json');
+      window.click_action = __get('click_action|json');
+      window.past_due = __get('past_due|json');
+      window.remain_seconds = __get('remain_seconds|json');
+      window.oauth_user_id = __get('oauth_user_id|json');
+      window.record_id = __get('record_id|json')
+      window.oauth_avatar = __get('oauth_avatar|json')
+    </script>
+    <script src="../scripts/share.js" __main></script>
+  </div>
+</c:layout>

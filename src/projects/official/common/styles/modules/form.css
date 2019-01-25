@@ -1,0 +1,7 @@
+.form-control {
+  width: 100%;
+  border: $border-em;
+  height: $h-input;
+  padding: 11px $pad;
+  box-sizing: border-box;
+}

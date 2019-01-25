@@ -1,0 +1,14 @@
+<!--说明书搜索  -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/search.css" slot="style">
+  <script src="../scripts/search.js" slot="script"></script>
+  <c:search-layout action="instructions.html" .selected-index="3" typename="个说明书">
+    <div class="search-list row j-list">
+        <div class="col-6" v-for="item in list">
+          <div class="search-list__item">
+            <a :href="item.link">{{item.title}}</a>
+          </div>
+        </div>
+      </div>
+  </c:search-layout>
+</c:layout>

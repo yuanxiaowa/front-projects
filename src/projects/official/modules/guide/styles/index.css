@@ -1,0 +1,40 @@
+.container-help {
+  width: 68.9%;
+  margin: 0 auto;
+  line-height: 1.7;
+  p {
+    color: #666;
+  }
+}
+.jumbotron {
+  padding: 165px 0;
+  text-align: center;
+  background: #ededed;
+  h1 {
+    font-weight: normal;
+    font-size: 36px;
+  }
+  p {
+    font-size: 22px;
+  }
+}
+
+.step {
+  margin: 40px 0;
+  border-bottom: $border;
+  padding-bottom: 40px;
+  &__num {
+    margin-right: 24px;
+    font-size: 60px;
+    color: $color-primary;
+    font-family: Arial;
+  }
+  h3 {
+    font-weight: normal;
+    font-size: 28px;
+    margin-top: 15px;
+  }
+  p {
+    font-size: $fs-small;
+  }
+}

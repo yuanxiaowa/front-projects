@@ -1,0 +1,14 @@
+.tab-u {
+  margin: 30px 0;
+  overflow: hidden;
+  &__item {
+    float: left;
+    margin-right: 80px;
+    color: #666;
+    border-bottom: 2px solid transparent;
+    &.is-selected {
+      color: $color-base;
+      border-bottom-color: $color-base;
+    }
+  }
+}

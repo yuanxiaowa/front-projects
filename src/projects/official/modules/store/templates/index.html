@@ -1,0 +1,43 @@
+<!--专卖店列表  -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <script .src="BAIDU_URL" slot="script"></script>
+  <script slot="script">
+    var pid = __get('province_id');
+    var cid = __get('city_id');
+    var netList = __getJSON('list');
+    var areaList = __getJSON('exists_areas_list');
+  </script>
+  <script src="../scripts/index.js" slot="script"></script>
+  <div class="container">
+    <img src="../images/banner.png" class="img-responsive">
+    <c:tab-u .selected-index="1" />
+    <div class="row area">
+      <div class="row__left">
+        <c:select name="province" .items="['请选择']" />
+      </div>
+      <div class="row__left">
+        <c:select name="city" .items="['请选择']" />
+      </div>
+      <div class="row__content">
+        <div style="display:none">
+          <a v-for="item in list" :href="item.link_url">{{item.name}}</a>
+        </div>
+        <span class="area__text j-areas-text"></span>
+        <span class="text-gray">共有<span class="area__num j-spot-num">0</span>个 专卖店</span>
+      </div>
+    </div>
+    <div class="row spot-map">
+      <div class="row__right" style="width:26.66%">
+        <div class="list2 list--addr" id="list"></div>
+        <div class="spot-pg">
+          <div class="u-right">0/0</div>
+          <span class="spot-pg__arrow is-disabled">&lt;</span>
+          <span class="spot-pg__arrow is-disabled">&gt;</span>
+        </div>
+      </div>
+      <div class="row__content">
+        <div id="map" style="height:430px"></div>
+      </div>
+    </div>
+</c:layout>

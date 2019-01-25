@@ -1,0 +1,40 @@
+<!-- 电子保修卡创建页 -->
+<c:layout>
+  <link rel="stylesheet" href="../../repair/styles/index.css" slot="style">
+  <script src="../../../common/vendors/jquery/jquery.validate-1.17.0.min.js" slot="script"></script>
+  <script src="../../../common/vendors/plupload/plupload.full-3.1.1.min.js" slot="script"></script>
+  <script src="../scripts/create.js" slot="script"></script>
+  <div class="container rc">
+    <h3 class="text-center">添加电子保修卡</h3>
+    <form action="/warranty-ecard/save" class="form" id="rc-form" method="post">
+      <div class="form-line">
+        <label class="form-lbl">SN码*</label>
+        <input :value="sn_code" name="sn_code" id="sn_code" required data-msg-required="请输入sn码" sncode="true" data-msg-sncode="请输入正确的sn码" type="text" class="form-control">
+        <a class="link-blue" href="/userhelp/sn" target="_blank">SN码可以在哪里找到？</a>
+      </div>
+      <div class="form-line">
+        <label class="form-lbl">产品型号*</label>
+        <input name="product_model" type="text" class="form-control" required data-msg-required="请输入产品型号">
+        <input name="material_no" type="hidden">
+      </div>
+      <div class="form-line">
+        <label class="form-lbl">购买凭证*</label>
+        <input name="buy_cert_img" required data-msg-required="请上传购买凭证" type="hidden">
+        <c:uploader></c:uploader>
+        <p class="text-gray">包含：带有购买日期的产品信息的发票、盖章购物凭证、电商购买记录及其它报修凭证。</p>
+      </div>
+      <div class="form-line">
+        <label class="form-lbl">姓名*</label>
+        <input name="buy_realname" required data-msg-required="请输入姓名" type="text" class="form-control">
+      </div>
+      <div class="form-line">
+        <label class="form-lbl">电话*</label>
+        <input name="mobile" required data-msg-required="请输入电话" mobile="true" data-msg-mobile="号码格式不正确" type="text" class="form-control">
+      </div>
+      <div class="form-line">
+        <button class="btn btn--primary form-c">保存</button>
+        <a class="link-blue" href="/userhelp/guarantee" target="_blank">电子保修卡使用说明</a>
+      </div>
+    </form>
+  </div>
+</c:layout>

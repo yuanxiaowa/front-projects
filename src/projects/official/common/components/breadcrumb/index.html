@@ -1,0 +1,7 @@
+<div class="breadcrumb">
+  <_ v-for="item,index in bread_crumbs">
+    <_ v-if="index>0">/</_>
+    <a v-if="item.url" class="breadcrumb__item link" :href="item.url">{{item.name}}</a>
+    <span v-else class="breadcrumb__item">{{item.name}}</span>
+  </_>
+</div>

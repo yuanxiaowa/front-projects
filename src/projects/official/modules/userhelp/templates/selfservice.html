@@ -1,0 +1,42 @@
+<c:layout>
+  <link rel="stylesheet" href="../styles/selfservice.css" __inline slot="style">
+  <img src="../images/s1.jpg" class="img-responsive">
+  <div class="container sfs">
+    <div class="sfs-con">
+      <h3>快速服务入口</h3>
+      <div class="sfs-entry row">
+        <div class="sfs-entry__item" .for="item,i in [
+          ['正品验证','/zhengpin'],
+          ['在线保修服务','/userhelp/maintain'],
+          ['电子保修卡','/userhelp/cards'],
+          ['售后网点查询','/network'],
+          ['附近专卖店','/store'],
+          ['积分兑换','//mall.ecovacs.cn/jifen'],
+          ['分享有礼','//mall.ecovacs.cn/page/wjf']
+        ]">
+          <a class="sfs-square" .href="item[1]">
+            <img .src="`../images/${i+1}.jpg`">
+            <p>{%item[0]%}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <h3>使用帮助</h3>
+    <div class="row">
+      <div class="col-4" .for="item in [
+        ['服务政策','了解科沃斯服务政策，保障用户的消费权益。','/userhelp/repair'],
+        ['科沃斯APP下载','更强大的操控体验，更舒心的服务享受，更多样化的会员权益。','/app'],
+        ['地宝使用指南','了解扫地机器人的使用方法、注意事项、更快更好的操控产品。','/userhelp/guide']
+      ]">
+        <a class="sfs-help" .href="item[2]">
+          <h4>{%item[0]%}</h4>
+          <p>{%item[1]%}</p>
+        </a>
+      </div>
+    </div>
+    <div class="sfs-con">
+      <h3>关注科沃斯官方微信</h3>
+      <img class="img-responsive" src="../images/sfs-b.jpg">
+    </div>
+  </div>
+</c:layout>

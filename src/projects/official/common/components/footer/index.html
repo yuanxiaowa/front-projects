@@ -1,0 +1,50 @@
+<footer class="footer" *class="{'footer--nopad':nopad}">
+  <div class="container">
+    <div class="l-table">
+      <ul class="list l-table__item" v-for="item in footer_menu_info">
+        <li class="list__title">{{item.title}}</li>
+        <li class="list__item" v-for="v in item.items">
+          <a class="link" :href="v.url" :target="v.target" v-bind="{'rel=nofollow':v.nofollow,b:a}">{{v.title}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer__bottom row">
+      <div class="row__right">
+        <div class="qrc">
+          <div class="qrc__item">
+            <a href="http://weibo.com/ecovacs" target="_blank" rel="nofollow"><c:icon name="sina" />
+          </div>
+          <div class="qrc__item">
+            <c:icon name="weixin" />
+            <div class="qrc__layer">
+              <img src="qrcode-wx.png" alt="">
+            </div>
+          </div>
+          <div class="qrc__item">
+            <a href="/app" target="_blank"><c:icon name="APP" />
+            <div class="qrc__layer">
+              <img src="qrcode-app.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="text-gray">
+          <c:icon name="phone" />全国客服热线：{%teleNum%}
+        </div>
+      </div>
+      <div class="row__content text-gray fs-small">
+        <div class="footer__links">
+          <a class="link" href="/policy/privacy" rel="nofollow">隐私政策</a>|
+          <a class="link" href="/policy/legal" rel="nofollow">使用条款</a>|
+           <a class="link" href="/userhelp/sitemap">网站地图</a>| 
+          <!-- <a class="link" href="/policy/contactus">联系我们</a>| -->
+          <a class="link footer__cs" href="https://www.ecovacs.com/global/choose-your-country">
+            <c:icon name="china" />
+            中国</a>
+        </div>
+        <div class="footer__copyright"><a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">{{icp_info}}</a> {{copyright_info}}
+          <span *if="env==='production'" class="szgs"><script>document.write(unescape("%3C/script%3E%3Cspan id='szgs_stat_icon_45401'%3E%3C/span%3E%3Cscript src='http://61.155.26.218/sendMark?siteid=45401&type=1' type='text/javascript'%3E%3C/script%3E"));</script></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

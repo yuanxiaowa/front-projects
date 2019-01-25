@@ -1,0 +1,43 @@
+<!--说明书列表  -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/list.css" slot="style">
+  <div class="choice-tab">
+    <div class="container row">
+      <div class="row__right">
+        <c:searchbox hint="请输入产品型号" action="/service/search-instructions.html" value="keyword" />
+      </div>
+      <div class="row__content">
+        <a class="choice-tab__item" v-for="item in category_list" :class="{'is-selected':item.selected}" :href="item.link">
+          {{item.name}}
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="list-emtpy" v-if="count===0">
+      <p class="list-emtpy__top">
+        <c:icon name="baoqian" />
+      </p>
+      <p class="list-empty__desc" v-if="keyword">抱歉，没有搜索到与“
+        <span class="list-emtpy__kw">{{keyword}}</span>”相关的结果，请检查输入的产品型号是否有误。</p>
+      <p class="list-empty__desc" v-else>没有相关产品！</p>
+      <p class="list-emtpy__bottom">
+        <a href="/userhelp/sproduct">如何查找产品型号</a>
+      </p>
+    </div>
+    <_ v-else>
+      <div class="row ins-list">
+        <div v-for="item in list" class="col-3">
+          <div class="card-ins">
+            <div class="card-ins__top">{{item.product_category_name}}{{item.name}}</div>
+            <c:imgp name="item" />
+            <div class="card-ins__bottom">
+              <a :href="item.instructions_url">查看说明书</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <c:pagination />
+    </_>
+  </div>
+</c:layout>

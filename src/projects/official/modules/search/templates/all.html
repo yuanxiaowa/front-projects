@@ -1,0 +1,71 @@
+<!--全部搜索  -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/search.css" slot="style">
+  <script src="../scripts/search.js" slot="script"></script>
+  <c:search-layout action="all.html" .selected-index="0" .nopagination="true" typename="个结果" count-name="information_count+instructions_count+product_count+question_count">
+    <_ v-if="product_count>0">
+      <h4>产品</h4>
+      <div class="row search-plist">
+        <a v-for="item in product_list" :href="item.description_url?item.description_url:item.welcome_url" class="col-4 sp-square">
+          <div class="row__left">
+            <c:imgp name="item" />
+          </div>
+          <div class="row__content">
+            {{item.name}}<br>{{item.product_category_full_name}}
+          </div>
+        </a>
+      </div>
+      <p>
+        <a href="product.html" class="link j-st">更多</a>
+      </p>
+    </_>
+    <_ v-if="question_count>0">
+      <h4>常见问题</h4>
+      <div class="search-list row j-list">
+        <div class="col-6" v-for="item in question_list">
+          <div class="search-list__item">
+            <a :href="item.link">{{item.title}}</a>
+          </div>
+        </div>
+      </div>
+      <p>
+        <a href="question.html" class="link j-st">更多</a>
+      </p>
+    </_>
+    <_ v-if="instructions_count>0">
+      <h4>说明书</h4>
+      <div class="search-list row j-list">
+        <div class="col-6" v-for="item in instructions_list">
+          <div class="search-list__item">
+            <a :href="item.link">{{item.title}}</a>
+          </div>
+        </div>
+      </div>
+      <p>
+        <a href="instructions.html" class="link j-st">更多</a>
+      </p>
+    </_>
+    <_ v-if="information_count>0">
+      <h4>资讯</h4>
+      <div class="search-news">
+        <div class="row search-news__item" v-for="item in information_list">
+          <div class="row__left" v-if="item.cover_image">
+            <a :href="item.link" class="search-news__img">
+              <img class="full" :src="item.cover_image">
+            </a>
+          </div>
+          <div class="row__content">
+            <div class="search-news__title"><a :href="item.link">{{item.title}}</a></div>
+            <div class="text-desc">
+              {{item.description}}
+              <p class="text-right">{{item.create_time}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>
+        <a href="news.html" class="link j-st">更多</a>
+      </p>
+    </_>
+  </c:search-layout>
+</c:layout>

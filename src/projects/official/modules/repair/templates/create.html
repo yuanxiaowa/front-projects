@@ -1,0 +1,73 @@
+<!-- 在线报修创建页 -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <link rel="stylesheet" href="../../../common/vendors/jquery/jquery.datetimepicker-2.5.14.min.css" slot="style">
+  <script src="../../../common/vendors/jquery/jquery.validate-1.17.0.min.js" slot="script"></script>
+  <script src="../../../common/vendors/jquery/jquery.datetimepicker.full-2.5.14.min.js" slot="script"></script>
+  <script src="../../../common/vendors/plupload/plupload.full-3.1.1.min.js" slot="script"></script>
+  <script>
+    var product_list = __getJSON('product_list')
+  </script>
+  <script src="../scripts/create.js" slot="script"></script>
+  <div class="container rc">
+    <h3 class="text-center">创建在线报修</h3>
+    <form action="/repair/save" class="form" id="rc-form" method="post">
+      <div class="form-line">
+        <label class="form-lbl">选择型号*</label>
+        <div class="select form-c" style="display:inline-block">
+          <input name="product_model" required type="hidden">
+          <input id="pm" autocomplete="off" class="form-control" type="text" style="width:100%">
+          <div class="select__layer" style="top:46px"></div>
+        </div>
+        <!-- <a class="link-blue" href="/userhelp/sn">SN码可以在哪里找到？</a> -->
+      </div>
+      <div class="form-line">
+        <label class="form-lbl">故障现象*</label>
+        <textarea id="desc" name="description" required data-msg-required="请输入故障现象" maxlength="1000" data-msg-maxlength="最多输入1000字"
+          placeholder="请输入故障描述或问题" class="form-control"></textarea>
+        <div class="form-tip">0/1000字</div>
+      </div>
+      <div class="form-line">
+        <label class="form-lbl">故障图片</label>
+        <input name="attach" type="hidden">
+        <c:uploader count="3" type="repair"></c:uploader>
+        <p class="text-gray">最多可以添加3张图片，单张图片不要超过1M,支持jpg\gif\png</p>
+      </div>
+      <div class="form-line">
+        <label class="form-lbl">购买凭证*</label>
+        <input name="buy_cert_img" required data-msg-required="请上传购买凭证" type="hidden">
+        <c:uploader type="repair"></c:uploader>
+        <p class="text-gray">包含：带有购买日期的产品信息的发票、盖章购物凭证、电商购买记录及其它报修凭证。</p>
+      </div>
+      <div class="form-line">
+        <label class="form-lbl">购买时间*</label>
+        <input name="buy_time" required data-msg-required="请选择购买时间" readonly id="datetimepicker" type="text" class="form-control" placeholder="请选择时间">
+      </div>
+      <div class="form-line">
+        <label class="form-lbl">收货地址*</label>
+        <div class="form-c">
+          <c:area-list></c:area-list>
+        </div>
+        <input name="address" type="text" class="form-control" placeholder="请输入详细地址">
+      </div>
+      <div class="form-line">
+        <label class="form-lbl">姓名*</label>
+        <input name="buy_realname" required data-msg-required="请输入姓名" type="text" class="form-control">
+      </div>
+      <div class="form-line">
+        <label class="form-lbl">电话*</label>
+        <input name="mobile" required data-msg-required="请输入电话" mobile="true" data-msg-mobile="号码格式不正确" type="text" class="form-control">
+      </div>
+      <div class="form-line">
+        <label>
+          <input type="checkbox" checked name="chk" required data-msg-required="请确认信息"> 我已经确认过信息
+        </label>
+        <p class="text-desc" style="margin-left:1.4em">请确保提交的信息准确，以便在需要时客服与您联系</p>
+      </div>
+      <div class="form-line">
+        <button class="btn btn--primary form-c">提交</button>
+        <a class="link-blue" href="/userhelp/repair" target="_blank">保修及收费政策</a>
+      </div>
+    </form>
+  </div>
+</c:layout>

@@ -1,0 +1,44 @@
+<!--官网首页  -->
+<c:layout .nobreadcrumb="true" .nopad="true" .is-index="true">
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <script src="../scripts/index.js" slot="script"></script>
+  <c:slider />
+  <div class="row row--bd">
+    <div class="col-4" v-for="item in middle_banner_list">
+      <a :href="item.url" class="bd">
+        <img class="bd__img" :src="item.img_url" :alt="item.alt">
+        <div class="bd__wrap">
+          <div class="bd__title">{{item.title}}</div>
+          <div class="bd__desc">{{item.introduce}} &gt;</div>
+        </div>
+      </a>
+    </div>
+    <!-- <div class="col-4">
+      <a href="/store" class="bd">
+        <img class="bd__img" src="../images/bd1.png" alt="科沃斯专卖店">
+        <div class="bd__wrap">
+          <div class="bd__title">您身边的体验店</div>
+          <div class="bd__desc">以优质的服务，提供卓越客户体验 &gt;</div>
+        </div>
+      </a>
+    </div>
+    <div class="col-4">
+      <a href="/service" class="bd">
+        <img class="bd__img" src="../images/bd2.jpg" alt="科沃斯会员服务">
+        <div class="bd__wrap">
+          <div class="bd__title">会员尊享服务</div>
+          <div class="bd__desc">以优质的服务，提供卓越客户体验 &gt;</div>
+        </div>
+      </a>
+    </div>
+    <div class="col-4">
+      <a href="/news/26" class="bd">
+        <img class="bd__img" src="../images/bd3.jpg" alt="科沃斯品牌资讯">
+        <div class="bd__wrap">
+          <div class="bd__title">科沃斯品牌资讯</div>
+          <div class="bd__desc">为您呈现最新最全面资讯动态 &gt;</div>
+        </div>
+      </a>
+    </div> -->
+  </div>
+</c:layout>

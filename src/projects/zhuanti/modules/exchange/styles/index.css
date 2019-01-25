@@ -1,0 +1,67 @@
+.con-small {
+  padding: .5em 0;
+}
+
+.con-base {
+  padding: 1em 0;
+}
+
+.con-normal {
+  padding: 1.5em 0;
+}
+
+.btn {
+  line-height: 3;
+  border: none;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.btn--primary {
+  color: #fff;
+  background: #253746
+}
+
+.btn-fixed {
+  position: fixed;
+  left: 1em;
+  right: 1em;
+  bottom: 0
+}
+
+.primary--text {
+  color: #253746
+}
+
+.gray--text {
+  color: #666;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.excg .spacer {
+  background: #f2f2f2;
+  height: 1em;
+}
+
+.excg img {
+  display: block;
+  width: 100%;
+}
+
+.excg .badge {
+  padding: 0 2em;
+  border-radius: 1em;
+  display: inline-block;
+  background: #253746 url(../images/img8.jpg) no-repeat;
+  background-position-x: 0.3em;
+  color: #fff;
+  background-size: contain;
+}
+
+.con-spec {
+  padding: 3em 0;
+}

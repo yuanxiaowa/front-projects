@@ -1,0 +1,9 @@
+@import '../../../common/components/tab-history/index';
+@import '../../../common/components/product-evt/index';
+
+#con{
+  height: 400px;
+  img{
+    max-height: 360px;
+  }
+}

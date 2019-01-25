@@ -1,0 +1,59 @@
+.tab-history {
+  margin: 50px 0 90px;
+  text-align: center;
+  .col-3 {
+    border-left: $border;
+    position: relative;
+    &:first-child {
+      border-left-color: transparent;
+    }
+    &:hover {
+      .list--his {
+        display: block;
+      }
+    }
+  }
+  .is-selected {
+    color: inherit;
+  }
+  .iconfont{
+    display: inline-block;
+    font-size: 30px;
+    &.icon-brand-about:before {
+        content: "\e600";
+    }
+    &.icon-brand-history:before {
+        content: "\e603";
+    }
+    &.icon-brand-social:before {
+        content: "\e604";
+    }
+    &.icon-brand-information:before {
+        content: "\e605";
+    }
+  }
+}
+
+.list--his {
+  display: none;
+  position: absolute;
+  left: 50%;
+  width: 112px;
+  padding: 10px 30px;
+  margin-left: -86px;
+  background: #fff;
+  z-index: 1;
+  .list__item {
+    border-top: $border;
+    line-height: 46px;
+    &:first-child {
+      border-top: none;
+    }
+  }
+}
+
+.icon-history {
+  display: inline-block;
+  size: 36px;
+  background: red;
+}

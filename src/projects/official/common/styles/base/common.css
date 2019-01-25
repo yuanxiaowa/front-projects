@@ -1,0 +1,154 @@
+html {
+  font-size: $fs;
+  font-family: 'Microsoft Yahei';
+  line-height: 1.5;
+  color: $color-base;
+}
+
+body {
+  min-width: $w-min;
+}
+
+a {
+  text-decoration: none;
+  &:--any-status {
+    color: inherit;
+  }
+}
+
+img,
+video,
+audio {
+  max-width: 100% !important;
+}
+img{
+  vertical-align: top;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+.link {
+  transition: .3s;
+  &,
+  &:link,
+  &:visited {
+    color: $color-gray;
+  }
+  &:hover {
+    color: $color-base;
+  }
+}
+
+.container {
+  max-width: $w-max;
+  min-width: $w-min;
+  margin: 0 auto;
+}
+
+.container-pad {
+  padding: 0 $pad;
+}
+
+.u-left {
+  float: left;
+}
+
+.u-right {
+  float: right;
+}
+
+.row {
+  &__left {
+    float: left;
+  }
+  &__right {
+    float: right;
+  }
+  &__content {
+    overflow: hidden;
+  }
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@for $i from 1 to 12 {
+  .col-$i {
+    float: left;
+    width: calc($(i) / 12 * 100)%;
+    box-sizing: border-box;
+  }
+}
+
+.l-table {
+  display: table;
+  width: 100%;
+  vertical-align: top;
+  &__item {
+    display: table-cell;
+    width: 1%;
+  }
+  &--av &__item {
+    vertical-align: middle;
+  }
+}
+
+.fs-small {
+  font-size: $fs-small;
+}
+
+.vm {
+  vertical-align: middle;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gray {
+  color: $color-gray;
+}
+
+.text-primary {
+  color: $color-primary;
+}
+
+.text-desc {
+  font-size: $fs-small;
+  color: $color-gray;
+}
+
+.text-highlight {
+  color: #000;
+}
+
+.hr {
+  border-top: $border;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
+.img-ratio {
+  position: relative;
+  img {
+    position: absolute 0;
+    size: 100%;
+  }
+}

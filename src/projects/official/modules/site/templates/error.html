@@ -1,0 +1,19 @@
+<!--错误提示页  -->
+<c:layout .nobreadcrumb="true">
+  <link rel="stylesheet" href="../styles/error.css" __inline slot="style">
+  <div class="container">
+    <div class="index_error">
+      <div class="index_error_img">
+        <img src="../images/error.png" width="60" height="60"><br>
+        {{message}}
+      </div>
+      <div class="index_error_text">
+        <p>您可以：检查刚才的输入
+        </p>
+        <p>到<a href="/service">服务中心</a>寻求帮助</p>
+        <p>去其他地方逛逛</p>
+        <p><a href="javascript:void(0)" class="blue" onclick="window.history.go(-1);">返回上一级操作</a>&nbsp; &nbsp;<a href="/">网站首页</a></p>
+      </div>
+    </div>
+  </div>
+</c:layout>

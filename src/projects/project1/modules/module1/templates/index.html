@@ -1,0 +1,31 @@
+<c:layout>
+  <link rel="stylesheet" href="https://static.hdslb.com/images/jquery-ui/custom/jquery-ui.css" slot="head">
+  <link rel="stylesheet" href="../styles/index.css" __main>
+  <include src="includes/partial1.html" />
+  <style>
+    h3 {
+      height: 100px;
+      color: red
+    }
+    h2 {
+      height: 33px;
+    }
+  </style>
+  <h3 *for="item of [{index:1,text:'text1'},{index:2,text:'text2'}]">{%item.index%}-{%item.text%}</h3>
+  <p style="color:red">
+    <img src="../images/14.jpg" alt="">
+  </p>
+  <script>
+    import url from '../images/14.jpg'
+    function x() {
+      console.log(url)
+    }
+    x();
+    let re = __regex('mobile', 'g')
+    if (re.test('hel')) {
+      alert('paass')
+    }
+  </script>
+  <g:comp js-export="aaaa" style="color:blue;background: red;"></g:comp>
+  <script src="../scripts/index.js" __main slot="footer"></script>
+</c:layout>

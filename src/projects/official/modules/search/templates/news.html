@@ -1,0 +1,23 @@
+<!--新闻搜索  -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/search.css" slot="style">
+  <script src="../scripts/search.js" slot="script"></script>
+  <c:search-layout action="news.html" .selected-index="4" typename="条资讯">
+    <div class="search-news">
+      <div class="row search-news__item" v-for="item in list">
+        <div class="row__left" v-if="item.cover_image">
+          <a :href="item.link" class="search-news__img">
+              <img class="full" :src="item.cover_image">
+            </a>
+        </div>
+        <div class="row__content">
+          <div class="search-news__title"><a :href="item.link">{{item.title}}</a></div>
+          <div class="text-desc">
+            {{item.description}}
+            <p class="text-right">{{item.create_time}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </c:search-layout>
+</c:layout>

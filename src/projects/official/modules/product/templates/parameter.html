@@ -1,0 +1,17 @@
+<!--参数  -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <c:product-header .selected-index="1" />
+  <div class="container">
+    <div class="service-desc">
+      <h2 class="service-desc__title">产品参数</h2>
+      <div class="row" v-if="goods_attributes">
+        <div class="col-6 row" v-for="item in goods_attributes">
+          <div class="row__left" :text="item.name"></div>
+          <div class="row__content" :text="item.attribute_value"></div>
+        </div>
+      </div>
+      <div class="text-gray" v-else>相关内容正在更新中 ，请稍后查看~</div>
+    </div>
+  </div>
+</c:layout>

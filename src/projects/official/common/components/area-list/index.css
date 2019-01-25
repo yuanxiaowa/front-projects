@@ -1,0 +1,19 @@
+@import "../select/index";
+.area-list {
+  margin-bottom: 1em;
+  height: 46px;
+  .select__text {
+    line-height: 44px;
+  }
+  .select__layer {
+    top: 46px;
+  }
+  .col-4 {
+    width: 32%;
+    margin-left: 2%;
+    float: left;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

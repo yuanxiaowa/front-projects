@@ -1,0 +1,41 @@
+.select {
+  position: relative;
+  cursor: default;
+  color: #666;
+  z-index: 1;
+  &__text {
+    line-height: 50px;
+    border: $border;
+    padding: 0 20px;
+    &:hover {
+      color: $color-base;
+    }
+    &::after {
+      position: absolute;
+      right: 20px;
+      font-family: iconfont;
+      content: '\e607';
+    }
+  }
+  &__layer {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 55px;
+    width: 100%;
+    overflow: auto;
+    line-height: 40px;
+    background: #f7f8f9;
+    max-height: 200px;
+  }
+  &__item {
+    padding: 0 20px;
+    transition: .3s;
+    &:hover {
+      color: #fff #c5c5c5;
+    }
+  }
+  select {
+    display: none;
+  }
+}

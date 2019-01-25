@@ -1,0 +1,29 @@
+<div class="slider j-slider">
+  <div class="slider-wrapper j-slider-wrapper">
+    <!-- <div class="slider__item">
+      <video autoplay loop :src="CDN_URL+'/hd/official/v/atmbot.mp4'"></video>
+      <div class="dsc">
+        <div class="dsc__2">科沃斯机器人</div>
+        <div class="dsc__3">是机器人，更是家人。</div>
+        <div class="dsc__4">
+          <a href="/atmbot">进一步探索 &gt;</a>
+        </div>
+      </div>
+    </div> -->
+    <a :href="item.url" :target="item.target" class="slider__item" v-for="item in banner_list">
+      <img v-if="item.upload_type==='image'" :src="item.img_url">
+      <video v-else :src="item.video_url" autoplay loop></video>
+    </a>
+  </div>
+  <div class="slider-op j-slider-arrow">
+    <div class="slider__arrow">
+      <c:icon name="xiangzuo" />
+    </div>
+    <div class="slider__arrow">
+      <c:icon name="xiangyou" />
+    </div>
+  </div>
+  <div class="slider__bullet j-slider-bulltet">
+    <span class="slider__bullet__item" :class="i===0?'is-selected':''" v-for="item,i in banner_list"></span>
+  </div>
+</div>

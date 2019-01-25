@@ -1,0 +1,25 @@
+<c:layout>
+  <slot name="style" slot="style" />
+  <slot name="script" slot="script" />
+  <c:product-header .selected-index="selectedIndex" />
+  <div class="container">
+    <div class="l-table service-frame">
+      <div class="l-table__item service-frame__left">
+        <div class="service-frame__left__title"><a :href="product_info.welcome_url">欢迎</a></div>
+        <ul class="list">
+          <li class="list__title">日常使用</li>
+          <li class="list__item" :class="item.current?'is-selected':''" v-for="item in product_left_menu_info.daily_use">
+            <a class="link" :href="item.url" :target="item.target">{{item.name}}</a>
+          </li>
+          <li class="list__title">更多服务</li>
+          <li class="list__item" :class="item.current?'is-selected':''" v-for="item in product_left_menu_info.more_services">
+            <a class="link" :href="item.url" :target="item.target">{{item.name}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="l-table__item service-frame__content">
+        <slot />
+      </div>
+    </div>
+  </div>
+</c:layout>

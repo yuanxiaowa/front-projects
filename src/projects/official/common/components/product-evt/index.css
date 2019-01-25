@@ -1,0 +1,46 @@
+.evt {
+  h1 {
+    margin: 90px 0 40px;
+    text-align: center;
+    color: #253746;
+    font-weight: normal;
+  }
+  h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  &-con {
+    padding: 0 86px;
+  }
+  &-timeline {
+    height: 1px;
+    color: #ccc;
+    border-top: 1px solid @color;
+    margin-top: 10px;
+    text-align: center;
+    &__item {
+      display: inline-block;
+      width: 100px;
+      position: relative;
+      cursor: pointer;
+      top: -5px;
+      &:before {
+        content: '';
+        display: inline-block;
+        size: 9px;
+        background: #ccc;
+        border-radius: 50%;
+        vertical-align: top;
+        transition: .3s;
+      }
+      &.is-selected {
+        top: -10px;
+        color: #253746;
+        &:before {
+          size: 19px;
+          background: #253746;
+        }
+      }
+    }
+  }
+}

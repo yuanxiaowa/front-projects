@@ -1,0 +1,39 @@
+.sfs {
+  h3 {
+    border-left: 3px solid $color-primary;
+    padding-left: 10px;
+    margin-bottom: 40px;
+  }
+  &-con {
+    margin-top: 70px;
+  }
+  &-entry {
+    &__item {
+      width: 20%;
+      float: left;
+      margin-bottom: 54px;
+    }
+  }
+  &-square {
+    display: block;
+    border: 1px solid $color-gray;
+    size: 130px;
+    margin-left: 8px;
+    text-align: center;
+    img {
+      margin-top: 20px;
+    }
+  }
+  &-help {
+    display: block;
+    background: #f9f9f9;
+    padding: 12px 40px;
+    margin-right: 20%;
+    h4 {
+      text-align: center;
+    }
+    p {
+      height: 3em;
+    }
+  }
+}

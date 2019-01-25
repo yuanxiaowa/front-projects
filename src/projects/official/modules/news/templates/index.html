@@ -1,0 +1,27 @@
+<!--资讯首页  -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <c:tab-history .selected-index="3" />
+  <div class="container">
+    <div class="newslist">
+      <div class="row" v-for="item in list">
+        <div class="row__right" v-if="item.cover_image">
+          <a :href="item.url" target="_blank">
+            <div class="img-ratio">
+              <img :src="item.cover_image">
+            </div>
+          </a>
+        </div>
+        <div class="row__content newslist__left">
+          <div class="newslist__time fs-small">{{item.create_time}}</div>
+          <h3 class="newslist__title">
+            <a :href="item.url" target="_blank">{{item.title}}</a>
+          </h3>
+          <p v-if="!item.cover_image" class="text-gray fs-small">{{item.description}}</p>
+          <a :href="item.url" class="fs-small" target="_blank">查看更多 &gt;</a>
+        </div>
+      </div>
+    </div>
+    <c:pagination />
+  </div>
+</c:layout>

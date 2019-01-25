@@ -1,0 +1,17 @@
+<!-- 电子保修卡首页 -->
+<c:layout>
+    <link rel="stylesheet" href="../../repair/styles/index.css" __inline>
+    <img src="../images/b1.jpg" class="img-responsive">
+    <div class="container rc text-center">
+      <h3>仅需三步轻松创建电子保修卡</h3>
+      <img style="width:70%" src="../images/b2.jpg">
+      <div class="rc-actions">
+        <a class="btn btn--primary" href="/warranty-ecard/create">创建电子保修卡</a>
+        <p class="text-desc">
+          已创建的电子保修卡可在
+          <a class="link-blue" :href="ACCOUNT_URL+'/account/warrantyEcard/list'">个人中心-我的电子保修卡</a>
+          查看
+        </p>
+      </div>
+    </div>
+  </c:layout>

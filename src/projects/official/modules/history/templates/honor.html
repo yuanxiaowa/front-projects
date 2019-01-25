@@ -1,0 +1,13 @@
+<!--品牌荣誉  -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/product.css" slot="style">
+  <script>
+    var items = __getJSON('timeline');
+  </script>
+  <script src="../scripts/timeline.js" slot="script"></script>
+  <c:tab-history .selected-index="0" />
+  <c:product-evt .selected-index="4" title="品牌荣誉">
+    <div class="row__right"></div>
+    <div class="row__content"></div>
+  </c:product-evt>
+</c:layout>

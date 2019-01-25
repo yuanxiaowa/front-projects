@@ -1,0 +1,45 @@
+<!--成为经销商  -->
+<c:layout .nopad="true">
+  <link rel="stylesheet" href="../../userhelp/styles/index.css" slot="style">
+  <div class="agency-wrap">
+    <div class="container">
+      <div class="agency">
+        <div class="agency-top">
+          <h1>成为经销商</h1>
+          <h2>单店加盟及空白区域代理流程</h2>
+        </div>
+        <div class="row agency__step" .for="item,i in [
+            ['加盟/代理/经销咨询','咨询招商经理，索取企业和产品资料，了解加盟及代理信息。'],
+            ['代理/经销申请','提出加盟/代理意向申请，并提交贵司相关资质证明，以作进一步沟通考察。'],
+            ['考察洽谈','加盟/代理/经销商前来厂家实地考察，双方更进一步相互了解，并就加盟/代理事宜做深入、具体的沟通。'],
+            ['签订合同','双方签订正式的书面合同-《科沃斯机器人加盟/代理/经销合同》'],
+            ['后续支持','开业协助、培训支持、活动策划、市场跟踪、装修补贴、销售返点、售后服务、宣传推广、物料等支持'],
+            ['合作回顾','双方不定期进行会晤，回顾一定时期销售情况，分析经营问题，分享市场成果。']
+          ]">
+          <div class="row__left">{%i+1%}</div>
+          <div class="row__content">
+            <h3>{%item[0]%}</h3>
+            <p>{%item[1]%}</p>
+          </div>
+        </div>
+        <div class="agency-contact">
+          <h3>联系方式</h3>
+          <div class="row">
+            <div class="row__left">联 系 人：</div>
+            <div class="row__content">吴向平</div>
+          </div>
+          <div class="row">
+            <div class="row__left">联系电话：</div>
+            <div class="row__content">0512-66052167</div>
+          </div>
+          <div class="row">
+            <div class="row__left">邮 &nbsp; &nbsp; 箱：</div>
+            <div class="row__content">
+              <a href="mailto:xiangping.wu@ecovacs.com">xiangping.wu@ecovacs.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</c:layout>

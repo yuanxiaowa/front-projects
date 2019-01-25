@@ -1,0 +1,40 @@
+<!-- 联系我们 -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/contact.css" __inline slot="style">
+  <div class="container">
+    <img src="../images/map.jpg" alt="">
+    <div class="contact-desc">
+      <h3>关注我们</h3>
+      <div class="l-table">
+        <div class="l-table__item">
+          <div class="row" .for="item in [
+              ['总机电话','0512-66276290'],
+              ['服务电话',teleNum],
+              ['监督电话',teleNum+'<span class=\'text-primary\'>（周一至周五 9：00 - 17：00，节假日除外）</span>'],
+              ['蝌蚪之家','http://bbs.ecovacs.cn', 1],
+              ['科沃斯官方微博','http://weibo.com/ecovacs', 1]
+            ]">
+            <label class="row__left" .text="item[0]+':'"></label>
+            <div class="row__content">
+              <a *if="item[2]===1" .text="item[1]" .href="item[1]" target="_blank"></a>
+              <_ *else>{%item[1]%}</_>
+            </div>
+          </div>
+        </div>
+        <div class="l-table__item">
+          <div class="row" .for="item,i in [
+              ['招聘邮箱','hr@ecovacs.com'],
+              ['办公地址','江苏省苏州市吴中区友翔路18号'],
+              ['官方招聘微信号','ecovacshr（科沃斯HR )']
+            ]">
+            <label class="row__left" .text="item[0]+':'"></label>
+            <div class="row__content">
+              <a *if="i===0" .href="'mailto:'+item[1]" .text="item[1]"></a>
+              <_ *else>{%item[1]%}</_>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</c:layout>

@@ -1,0 +1,62 @@
+<header class="header">
+  <div class="container">
+    <a *if="!isIndex" href="/"><img src="logo.png" alt="扫地机器人" class="logo"></a>
+    <img *else src="logo.png" alt="扫地机器人" class="logo">
+    <div class="u-right">
+      <ul class="menu menu--top u-left">
+        <li class="menu__item" v-for="menu in header_menu_info">
+          <a class="menu__link" :href="menu.menu_url">{{menu.title}}</a>
+          <div class="dropdown" v-if="menu.list">
+            <div class="container">
+              <div class="dropdown-wrap">
+                <div class="l-table">
+                  <div class="l-table__item l-table">
+                    <div class="l-table__item" v-for="submenu in menu.list">
+                      <div class="list">
+                        <div class="list__title">
+                          <a v-if="submenu.more_url" :href="submenu.more_url">{{submenu.title}}</a>
+                          <_ v-else>{{submenu.title}}</_>
+                        </div>
+                        <div class="list__item" v-for="product in submenu.product_list">
+                          <a class="link" :href="product.url">{{product.title}}</a>
+                        </div>
+                        <div class="list__bottom" v-if="submenu.more_url">
+                          <a :href="submenu.more_url">了解更多 &gt;</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="l-table__item text-right">
+                    <a :href="menu.url"><img :src="menu.image_url"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu__item">
+          <span class="menu__link menu__search">
+            <c:icon name="search" />
+          </span>
+          <div class="dropdown">
+            <div class="dropdown-wrap1 search">
+              <c:searchbox hint="请输入搜索关键字" action="/search/all.html" />
+              <div class="search__desc">快速链接</div>
+              <div class="list">
+                <div class="list__item" *for="item in [
+                    ['查找体验店','/store'],
+                    ['品牌资讯','/news/26'],
+                    ['服务网点','/network'],
+                    ['联系我们','/policy/contactus']
+                  ]">
+                  <a class="link" .href="item[1]">{%item[0]%}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <a href="{{SHOP_URL}}?utm_source=guanwang&utm_medium=daohang&utm_campaign=shangcheng" target="_blank" class="header__ac">商城</a>
+    </div>
+  </div>
+</header>

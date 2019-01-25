@@ -1,0 +1,86 @@
+@import "../../../common/components/slider/index";
+$gap: 6px;
+.row--bd {
+  margin: $gap 0 $gap -$gap;
+}
+
+.bd {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  display: block;
+  margin-left: $gap;
+  padding-bottom: 60.11%;
+  &__wrap {
+    position: absolute 0;
+  }
+  &__title {
+    font-size: 18px;
+    margin: 50px 0 0;
+  }
+  &__desc {
+    transform: translateY(-200%);
+    transition: .7s ease-out;
+    /* color: $color-gray; */
+    opacity: 0;
+  }
+  &__img {
+    position: absolute * 0 0;
+    height: 100%;
+    transition: transform 1s;
+  }
+  &:hover {
+    .bd__desc {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .bd__img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.home-top-ad{
+  width: 100%;
+  height: 80px;
+  display: none;
+  overflow: hidden;
+}
+.m-fullscreen-ad{
+  .mask{
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    z-index: 9990;
+    opacity: .7;
+    filter: alpha(opacity=70);
+  }
+  i.close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 40px;
+      height: 40px;
+      background: url(../images/close-red.png) center no-repeat;
+      cursor: pointer;
+  }
+  .ad-main {
+    position: fixed;
+    z-index: 100000;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+  }
+  .ad-content {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+  }
+}

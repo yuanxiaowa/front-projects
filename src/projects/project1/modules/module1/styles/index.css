@@ -1,0 +1,6 @@
+@import "partials/a.css";
+@import "partials/b.css";
+
+.index {
+  color: red;
+}

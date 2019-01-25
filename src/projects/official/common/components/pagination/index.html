@@ -1,0 +1,12 @@
+<div class="pagination" v-if="page_data">
+  <a v-if="page_data.prev.href!==''" :href="page_data.prev.href" class="pagination__item pagination__prev">
+    <c:icon name="xiangzuoshijiantou" />
+  </a>
+  <a href="" class="pagination__item"
+    v-for="v,k in page_data.page"
+    :class="{'is-selected':v===''}"
+    :href="v">{{k}}</a>
+  <a v-if="page_data.next.href!==''" :href="page_data.next.href" href="" class="pagination__item pagination__next">
+    <c:icon name="xiangyoushijiantou" />
+  </a>
+</div>

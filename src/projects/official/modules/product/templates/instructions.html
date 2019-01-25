@@ -1,0 +1,15 @@
+<!--使用说明书  -->
+<c:layout-service>
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <_ v-if="instructions_info">
+    <h2>
+      <c:icon name="doc" />{{instructions_info.title}}
+    </h2>
+    <p v-if="instructions_info.content">{{instructions_info.content}}</p>
+    <p v-else>相关内容正在更新中 ，请稍后查看~</p>
+    <a target="_blank" v-if="instructions_info.file_url" :href="instructions_info.file_url" class="btn btn--red">
+      <c:icon name="xiazai" />下载
+    </a>
+  </_>
+  <p v-else>相关内容正在更新中 ，请稍后查看~</p>
+</c:layout-service>

@@ -1,0 +1,128 @@
+@import '../../../common/components/select/index';
+
+/* .spot-top {
+  height: 216px;
+  background: #dedede;
+} */
+
+.area {
+  margin-top: 32px;
+  .row__left {
+    width: 240px;
+    margin-right: $pad;
+  }
+  .row__content {
+    line-height: 50px;
+  }
+  &__num {
+    color: $color-base;
+  }
+}
+
+.spot-map {
+  margin-top: 40px;
+  img {
+    max-width: inherit !important;
+  }
+  .list2 {
+    height: 430px;
+    overflow: auto;
+    border: $border;
+    border-left: 0;
+  }
+}
+
+.list2 {
+  cursor: default;
+  &__item {
+    padding: 24px 20px;
+    &:hover,
+    &.is-selected {
+      background: #f7f8f9;
+    }
+  }
+  .row__left {
+    border: 1px solid;
+    border-radius: 50%;
+    width: 20px;
+    line-height: @width;
+    text-align: center;
+    margin-right: 10px;
+    color: #a2a9af;
+  }
+}
+
+.spot-pg {
+  margin-top: -30px;
+  padding: 0 20px;
+  color: $color-gray;
+  &__arrow {
+    color: #ee0a3b;
+    cursor: pointer;
+    font-size: 1.5em;
+    &.is-disabled {
+      color: $color-gray;
+      cursor: default;
+    }
+  }
+}
+
+.addr-detail {
+  padding: 0 50px;
+  &__title {
+    font-size: 18px;
+    margin: 12px 0;
+  }
+}
+
+.mb-6 {
+  margin-bottom: 6px;
+  word-break: break-all;
+}
+
+.spot-bottom {
+  margin-top: 70px;
+}
+
+.spot-intro {
+  margin: 28px 0;
+  &__title {
+    padding-bottom: $pad;
+    margin-bottom: $pad;
+    border-bottom: $border;
+  }
+  &__desc {
+    color: $color-gray;
+    font-size: $fs-small;
+  }
+  .col-6 {
+    margin-bottom: 22px;
+    box-sizing: border-box;
+    padding-right: 10%;
+  }
+}
+
+.label-rating {
+  border: 1px solid;
+  color: #ee0a3b;
+  padding: 0 .5em;
+  font-size: $fs-small;
+  margin-left: 4px;
+  word-break: keep-all;
+  &.lv-1,
+  &.EXPERIENCE {
+    color: #ee0a3b;
+  }
+  &.lv-2,
+  &.DIRECT {
+    color: #ff4a01;
+  }
+  &.lv-3,
+  &.EXCLUSIVE {
+    color: $color-primary;
+  }
+}
+
+.cls {
+  clear: left;
+}

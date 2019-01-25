@@ -1,0 +1,26 @@
+.pagination {
+  text-align: center;
+  &__item {
+    display: inline-block;
+    margin: 0 10px;
+    min-width: 30px;
+    line-height: @min-width;
+    border: $border;
+    &.is-selected {
+      color: #fff $color-primary;
+    }
+  }
+  &__next {
+    margin-right: 0;
+    &:--any-status {
+      color: $color-gray;
+    }
+  }
+  &__prev {
+    margin-left: 0;
+    color: $color-gray;
+    &:--any-status {
+      color: $color-gray;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<form *if="action" .action="action" class="searchbox j-sbox">
+  <input type="text" class="form-control" .placeholder="hint" .:value="value">
+  <button><c:icon name="search" /></button>
+</form>
+<form *else .:action="daction" class="searchbox j-sbox">
+  <input type="text" class="form-control" .placeholder="hint" .:value="value">
+  <button><c:icon name="search" /></button>
+</form>

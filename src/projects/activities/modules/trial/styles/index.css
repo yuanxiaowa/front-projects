@@ -1,0 +1,374 @@
+.index {
+  overflow: hidden;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.index .loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.index .loading_bling {
+  width: auto;
+  height: 47.59%;
+  position: absolute;
+  left: 1%;
+  top: 3.9%;
+  z-index: 0;
+  -webkit-animation: tada 1s linear infinite;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-delay: .5s;
+  -webkit-animation-delay: .5s;
+}
+
+@keyframes tada {
+  0% {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+  }
+  10%,
+  20% {
+      transform: scale(1) rotate(-3deg);
+      -webkit-transform: scale(1) rotate(-3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+      transform: scale(1) rotate(3deg);
+      -webkit-transform: scale(1) rotate(3deg);
+  }
+  40%,
+  60%,
+  80% {
+      transform: scale(1) rotate(-3deg);
+      -webkit-transform: scale(1) rotate(-3deg);
+  }
+  100% {
+      transform: scale(1) rotate(0);
+      -webkit-transform: scale(1) rotate(0);
+  }
+}
+
+@-webkit-keyframes tada {
+  0% {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+  }
+  10%,
+  20% {
+      transform: scale(1) rotate(-3deg);
+      -webkit-transform: scale(1) rotate(-3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+      transform: scale(1) rotate(3deg);
+      -webkit-transform: scale(1) rotate(3deg);
+  }
+  40%,
+  60%,
+  80% {
+      transform: scale(1) rotate(-3deg);
+      -webkit-transform: scale(1) rotate(-3deg);
+  }
+  100% {
+      transform: scale(1) rotate(0);
+      -webkit-transform: scale(1) rotate(0);
+  }
+}
+
+.index #video1,
+.index #video2 {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.index .v1-click {
+  width: 40.6%;
+  height: 44.89%;
+  position: absolute;
+  top: 27.900%;
+  left: 21.5%;
+  z-index: 2;
+}
+
+.index .v1-click>img {
+  width: 10.8%;
+  height: auto;
+  transform: rotate(5deg);
+  -webkit-transform: rotate(5deg);
+  animation: bling .9s linear .8s infinite;
+  -webkit-animation: bling .9s linear .8s infinite;
+  opacity: 0;
+  position: absolute;
+  top: 26.388%;
+  left: 26.7%;
+}
+
+@keyframes bling {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: .7;
+  }
+}
+
+@-webkit-keyframes bling {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: .7;
+  }
+}
+
+.index .shouji {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  transform: translate3d(100%, 50%, 0);
+  -webkit-transform: translate3d(100%, 50%, 0);
+}
+
+.index .shouji.in {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transition: .6s;
+  -webkit-transition: .6s;
+}
+
+.index .v2-click {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity .8s;
+  -webkit-transition: opacity .8s;
+}
+
+.index .v2-click .over-img {
+  width: 100%;
+  height: 100%;
+}
+
+.index .v2-click.show {
+  opacity: 1;
+}
+
+.index .v2-click .over-help {
+  width: auto;
+  height: 8.66666%;
+  position: absolute;
+  top: 70.8999%;
+  left: 37%;
+}
+
+.index .v2-click .over-again {
+  width: auto;
+  height: 8.6661%;
+  position: absolute;
+  top: 82%;
+  left: 22%;
+}
+
+.index .v2-click .over-share {
+  width: auto;
+  height: 8.6661%;
+  position: absolute;
+  top: 82%;
+  left: 55%;
+}
+
+.index .v2-click .over-help,
+.index .v2-click .over-again,
+.index .v2-click .over-share {
+  animation: shake .8s linear infinite;
+  -webkit-animation: shake .8s linear infinite;
+}
+
+@keyframes shake {
+  0% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+  }
+  20% {
+      transform: rotate(-7deg);
+      -webkit-transform: rotate(-7deg);
+  }
+  20.1% {
+      transform: rotate(-7deg);
+      -webkit-transform: rotate(-7deg);
+  }
+  65% {
+      transform: rotate(7deg);
+      -webkit-transform: rotate(7deg);
+  }
+  65.1% {
+      transform: rotate(7deg);
+      -webkit-transform: rotate(7deg);
+  }
+  85% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+  }
+  20% {
+      transform: rotate(-7deg);
+      -webkit-transform: rotate(-7deg);
+  }
+  20.1% {
+      transform: rotate(-7deg);
+      -webkit-transform: rotate(-7deg);
+  }
+  65% {
+      transform: rotate(7deg);
+      -webkit-transform: rotate(7deg);
+  }
+  65.1% {
+      transform: rotate(7deg);
+      -webkit-transform: rotate(7deg);
+  }
+  85% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+  }
+}
+
+.index .share {
+  padding: 2% 3% 0 0;
+  background: url(../images/share.png) no-repeat top right rgba(0, 0, 0, .7);
+  background-size: 65% auto;
+  background-origin: content-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.index .finish-box {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  font-size: 0;
+  padding-top: 30%;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.index .finish-box .top-tip {
+  width: 90%;
+  height: auto;
+}
+
+.index .key-box {
+  display: -webkit-box;
+  padding: 8% 6% 0;
+}
+
+.index #key {
+  width: 200px;
+  font-size: 12px;
+  text-align: left;
+  color: #333;
+  border: 1px solid #999;
+  border-radius: 8px;
+  padding: 3px;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.index .btn {
+  width: 18%;
+  height: auto;
+  display: -webkit-box;
+  padding-left: 10px;
+  -webkit-box-align: center;
+  box-align: center;
+}
+
+.index .qr-box {
+  display: -webkit-box;
+  padding: 0 6%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+}
+
+.index .qr-box .qr-img {
+  width: 25%;
+  height: auto;
+}
+
+.index .qr-box .qr-tip {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  box-align: center;
+  padding-left: 3%;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+}
+
+.index .toast {
+  height: 36px;
+  padding: 0 10px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  background: rgba(0, 0, 0, .9);
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  z-index: 10;
+}
+
+.index *.hide {
+  display: none;
+}

@@ -1,0 +1,205 @@
+<c:layout>
+  <link rel="stylesheet" href="../styles/index.css" __inline>
+  <div class="excg" id="excg">
+    <img src="../images/banner.jpg">
+    <div class="container">
+      <div class="con-spec">
+        <button v-if="!received" class="btn btn--primary" :disabled="loading" @click="onClick">点击领取奖品兑换码</button>
+
+        <div v-else>
+          <div class="text-center primary--text">
+            <div v-if="data.code===1">
+              <img v-if="data.type" src="../images/img9.jpg" style="width:4em;display:inline-block">
+              <div v-if="data.type==='TICKET'">
+                您成功领取了{{data.msg}}
+                <br>
+                去双11主会场看看吧！
+              </div>
+              <div v-else-if="data.type==='PARTS_TICKET'">
+                恭喜您成功领取了
+                <br>{{data.msg}}
+                <div class="gray--text">请谨慎保管兑换码！</div>
+              </div>
+              <div v-else>{{data.msg}}</div>
+            </div>
+            <div v-else>{{data.msg}}</div>
+          </div>
+          <div class="con-small"></div>
+          <div style="height:3em">
+            <div ref="btn" :class="btnClass">
+              <button class="btn btn--primary" v-if="data.status==='go11'" @click="go11">去双11主会场</button>
+              <button class="btn btn--primary" v-else @click="goApp(1)">{{data.status==='openApp'?'点击打开APP兑换奖品':'立即去APP参加活动'}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="../images/img1.png">
+      <div class="con-base gray--text" v-once>
+        <div class="primary--text" style="float:right">
+          <a href="https://ecosystem-wap.ecovacs.cn/guide/promotionGuide?no=pqgs7x5i" class="fs-big" style="text-decoration:underline">如何使用兑换码？</a>
+        </div>
+        <b>活动说明</b>
+        <div v-for="(item,i) of intros" :key="i" v-html="i+1+'、'+item"></div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <img src="../images/img2.jpg">
+    <div class="container">
+      <div class="con-normal">
+        <b class="fs-big primary--text">精彩1：周三超值兑</b>
+        <div class="con-small">每周三上午10点，APP兑换专区最低10积分大秒杀，双十一期间奖品更丰富哦~</div>
+      </div>
+      <div class="text-center fs-big primary--text"><b>10-100积分奖品</b></div>
+      <div class="con-normal">
+        <img src="../images/img3.jpg">
+      </div>
+      <div class="text-center fs-big primary--text"><b>1000积分奖品</b></div>
+      <div class="con-normal">
+        <img src="../images/img4.jpg">
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="container">
+      <div class="con-normal">
+        <div>
+          <span class="badge">10.12-11.11</span>
+        </div>
+        <b class="fs-big primary--text">精彩2：翻倍赚积分</b>
+        <div class="con-small">活动期间，参与活动赚取的所有积分，均可翻倍。</div>
+        <div class="con-normal">
+          <img src="../images/img5.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="container">
+      <div class="con-normal">
+        <div>
+          <span class="badge">10.12-10.31</span>
+        </div>
+        <b class="fs-big primary--text">精彩3：新品免费试用</b>
+        <div class="con-small">老用户优先试用新品，地宝、窗宝、沁宝，你想要的新潮科技都在这里！</div>
+      </div>
+    </div>
+    <div style="padding-bottom:2em">
+      <img src="../images/img7.jpg">
+    </div>
+    <div class="spacer"></div>
+    <div class="container">
+      <div class="con-normal">
+        <div>
+          <span class="badge">10.20-11.11</span>
+        </div>
+        <b class="fs-big primary--text">精彩4：红包雨</b>
+        <div class="con-small">每天多场红包雨，手持吸尘器，陶瓷刀三件套，收纳两件套，防嗮小黑伞等实物奖品拿不停！</div>
+        <div class="con-normal">
+          <img src="../images/img6.jpg">
+        </div>
+      </div>
+      <div v-if="!received">
+        <button class="btn btn--primary" @click="goApp">立即去APP参加活动</button>
+        <div class="con-normal"></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://static-jc.ecovacs.cn/p/js/libs/vue/vue.min.js"></script>
+  <script>
+    import $ from 'jquery'
+    //ajax全局设置
+    $.ajaxSetup({
+      dataType: 'json',
+      //跨越请求
+      xhrFields: {
+        withCredentials: true
+      },
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      complete: function (xhr, textStatus) {
+        let res = xhr.responseJSON;
+        if (typeof res !== 'undefined' && res.hasOwnProperty('code')) {
+          if (res.code == 100001 || res.code == 10001) {
+            location.href = window.ACCOUNT_URL + '/login.html?callback=' + encodeURIComponent(location.href);
+          }
+        }
+
+      }
+    })
+
+    function addEvent(text) {
+      window._hmt && window._hmt.push(['_trackEvent', '兑换配件券', text])
+    }
+
+    function go(url) {
+      setTimeout(() => {
+        location.href = url
+      }, 100)
+    }
+
+    new Vue({
+      el: '#excg',
+      data: {
+        intros: [
+          '本活动开展时间：10月12日0点-10月31日12点；',
+          '活动仅限在科沃斯各销售渠道有过购买行为的特邀老用户参加，具体以收到邀请短信为准；',
+          '活动期间每位指定用户仅可领取1份奖品兑换码，奖品码随机发放，不可指定；',
+          '实物奖品兑换码数量有限（先到先得），发放完后用发放15元配件优惠券；',
+          '兑换码领取后，请截图或复制保管；',
+          '实物奖品最迟将会次月进行物流派发，用户可至订单中心查询物流信息。',
+          '奖品一经领取，非质量问题，不退不换；',
+          '15元配件优惠券使用说明：<br>①券码有效期：10月13日-11月11日；<br>②使用商品范围：商城所有配件类商品；<br>③优惠券满16元可使用，每个订单仅限使用1张优惠券；'
+        ],
+        loading: false,
+        received: false,
+        data: {
+          type: '',
+          msg: '',
+          status: ''
+        },
+        btnClass: ''
+      },
+      methods: {
+        onClick() {
+          this.loading = true
+          $.getJSON(`${window.API_URL}/hdPartsTicket/getTicket`).then(({
+            data,
+            code
+          }) => {
+            if (code === 1) {
+              addEvent('券码领取')
+              data.code = code
+              $.extend(this.data, data)
+              this.received = true
+              setTimeout(this.stickTop, 800)
+            } else {
+              alert(msg)
+            }
+          }).always(() => {
+            this.loading = false
+          })
+        },
+        goApp(b) {
+          addEvent(b ? 'APP兑换奖品' : 'APP参加活动')
+          go('http://m.ecovacs.com.cn/download/ecosphere/AppDownload.htm?mid=tuiguang35')
+        },
+        go11() {
+          go('https://ecosystem-wap.ecovacs.cn/guide/promotionGuide?no=ban6ktnz')
+        },
+        stickTop() {
+          var $ele = $(this.$refs.btn.parentNode)
+          var {
+            top
+          } = $ele.offset()
+          var height = $ele.height()
+          window.onscroll = () => {
+            if (window.scrollY > top + height) {
+              this.btnClass = 'btn-fixed'
+            } else {
+              this.btnClass = ''
+            }
+          }
+        }
+      }
+    })
+  </script>
+</c:layout>

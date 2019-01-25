@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="search-top row">
+    <div class="row__left" id="sc">
+      <c:searchbox hint="请输入..." .value="noval?'':'keyword'" .action="'/search/'+action" />
+    </div>
+    <div class="row__content text-desc">
+      <a target="_blank" href="/userhelp/sproduct">如何查找产品型号？</a>
+    </div>
+  </div>
+  <div class="search-tab row">
+    <a class="search-tab__item j-st" *class="{'is-selected':selectedIndex===i}" .text="item[0]" .href="'/search/'+item[1]+'.html'" .for="item,i in [
+        ['全站','all'],
+        ['产品','product'],
+        ['常见问题','question'],
+        ['说明书','instructions'],
+        ['资讯','news']]"></a>
+  </div>
+  <_ *if="typeof selectedIndex==='number'">
+    <_ .v-if="(countName||'count')+'>0'">
+      <p class="text-desc">为您找到 {%'{{'+(countName||'count')+'}}'%} {%typename%}</p>
+      <div class="search-wrap">
+        <slot />
+      </div>
+      <c:pagination *if="!nopagination" />
+    </_>
+    <div class="search-empty" v-else>
+      <p>抱歉，没有搜索到与{{keyword?' “'+keyword+'” ':''}}相关的结果</p>
+      <div class="text-gray">
+        请检查您的输入是否有误
+        <br>或通过
+        <a href="javascript:void()" class="link-blue openChatBox">在线客服</a> 咨询问题
+      </div>
+    </div>
+  </_>
+  <slot *else>
+    <div class="search-empty">
+      <p>抱歉，没有搜索到相关的结果</p>
+      <div class="text-gray">
+        请尝试搜索其他关键词查看更多结果
+        <br>或通过
+        <a href="javascript:void(0)" class="link-blue openChatBox">在线客服</a> 咨询问题
+      </div>
+    </div>
+  </slot>
+</div>

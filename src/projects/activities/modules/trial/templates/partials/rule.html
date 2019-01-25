@@ -1,0 +1,99 @@
+<div class="rule">
+  <h3 class="rule__title">
+    <span>活动规则</span>
+  </h3>
+  <div class="rule__section">
+    <div class="rule__name">
+      <span>活动时间</span>
+    </div>
+    <div class="rule__content">
+      2018年3月26日—2018年4月10日 17：59：59
+    </div>
+  </div>
+  <div class="rule__section">
+    <div class="rule__name">
+      <span>奖品设置</span>
+    </div>
+    <div class="rule__content">
+      <div class="row">
+        <b class="row__left">一等奖：</b>
+        <div class="row__main">第1至第10名，科沃斯扫地机器人DJ35一台</div>
+      </div>
+      <div class="row">
+        <b class="row__left">二等奖：</b>
+        <div class="row__main">第11至第40名，LED台灯一个</div>
+      </div>
+      <div class="row">
+        <b class="row__left">三等奖：</b>
+        <div class="row__main">第41至第100名，运动水壶一个</div>
+      </div>
+    </div>
+  </div>
+  <div class="rule__section">
+    <div class="rule__name">
+      <span>参与方式</span>
+    </div>
+    <div class="rule__content">
+      <div class="row">
+        <label class="row__left">1、</label>
+        <div class="row__main">根据提示，进入活动页面，点击【我要报名】</div>
+      </div>
+      <div class="row">
+        <label class="row__left">2、</label>
+        <div class="row__main">填写资料，报名成功后，分享并邀请好友助力</div>
+      </div>
+      <div class="row">
+        <label class="row__left">3、</label>
+        <div class="row__main">成功获得试用机会的用户，须在收到扫地机器人DJ35后15日内将产品试用报告（文字、图片、视频等，必须为原创内容）发送至邮箱：
+          <a href="mailto:robot@ecovacs.com">robot@ecovacs.com</a>，试用报告符合以上条件者，产品可自留。
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rule__section">
+    <div class="rule__name">
+      <span>试用报告</span>
+    </div>
+    <div class="rule__content">
+      <!-- <div class="row">
+        <label class="row__left">1、</label>
+        <div class="row__main">试用报告样式参考链接：
+          <a href="//mp.weixin.qq.com/s/BsL2Dj-Rm-NFurlbXTRM6A">微信【科沃斯】科研所内容</a>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="row__main">字数不得少于500字、图片不得少于3张、必须为原创内容</div>
+      </div>
+    </div>
+  </div>
+  <div class="rule__section">
+    <div class="rule__name">
+      <span>奖项公布</span>
+    </div>
+    <div class="rule__content">
+      2018年4月11日，中奖名单将在微信公众号“科沃斯”公布，关注公众号输入“新品试用”查询。
+    </div>
+  </div>
+  <div class="rule__section">
+    <div class="rule__name">
+      <span>注意事项</span>
+    </div>
+    <div class="rule__content">
+      <div class="row" *for="(item,i) of [
+        '每位用户在每期活动中，每日最多可为5位好友助力，每次助力获得分值为0.5-3分随机增加；',
+        '中奖名单中，如出现相同助力值时，则按参与时间先后进行排名；',
+        '用户报名时提供正确的个人信息，奖品将于活动结束后30个工作日内寄出；',
+        '若发现某账号诚信增长异常，或经他人举报并确认存在刷票行为，主办方有权取消其参与资格；',
+        '用户上传的试用报告中所有素材，科沃斯机器人有权在其官方渠道传播、使用；',
+        '对活动有任何疑问，可联系微信公众号“科沃斯”咨询；',
+        '中奖产品只得用于用户自行使用，不得转卖，一经发现，立即收回。'
+      ]">
+        <label class="row__left">{%i+1%}、</label>
+        <div class="row__main">{%item%}</div>
+      </div>
+    </div>
+  </div>
+  <div class="rule__section tc">
+    <button class="btn-normal j-dialog-close">确认</button>
+  </div>
+</div>

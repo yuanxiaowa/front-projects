@@ -1,0 +1,111 @@
+@import "../../../common/components/area-list/index";
+@import "../../../common/components/uploader/index";
+@import "../../../common/components/dialog/index";
+.rc {
+  h3 {
+    margin: 70px 0 56px;
+  }
+  &-actions {
+    margin: 100px 0;
+    .btn {
+      margin: 0 1em;
+      padding: 0 74px;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  line-height: 40px;
+  &--primary {
+    color: #fff $color-primary;
+    &:link,
+    &:visited {
+      color: #fff;
+    }
+  }
+  &--dotted {
+    border: 1px solid;
+    &,
+    &:visited {
+      color: $color-primary;
+    }
+  }
+}
+
+.form {
+  &-line {
+    margin-left: 25%;
+    margin-bottom: 2.5em;
+    position: relative;
+  }
+  &-lbl {
+    display: block;
+    line-height: 36px;
+  }
+  $w: 64.44%;
+  &-control {
+    width: $w;
+    border: $border;
+    &:focus {
+      outline: none;
+    }
+    textarea& {
+      height: 125px;
+      resize: vertical;
+    }
+  }
+  &-tip {
+    position: absolute;
+    bottom: 10px;
+    left: $w;
+    color: #999;
+    transform: translateX(-110%);
+  }
+  &-c {
+    width: $w;
+  }
+  .btn--primary {
+    cursor: pointer;
+  }
+}
+
+.link-blue {
+  color: #005eb8;
+  &:link,
+  &:visited {
+    color: #005eb8;
+    text-decoration: underline;
+  }
+}
+
+.form-control.error {
+  border-color: red;
+}
+
+label.error {
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  color: red;
+  &:before {
+    font-family: "iconfont";
+    font-smoothing: antialiased;
+    content: "\e65e";
+    margin-right: 0.5em;
+  }
+}
+
+input,
+select {
+  &.error {
+    + {
+      .uploader .uploader-picker,
+      .select__text,
+      .form-control {
+        border-color: red;
+      }
+    }
+  }
+}

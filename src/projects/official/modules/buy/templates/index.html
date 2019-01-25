@@ -1,0 +1,35 @@
+<!--购买渠道  -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <div class="container">
+    <img src="../images/banner.png" class="img-responsive">
+    <c:tab-u .selected-index="0" />
+    <div class="panel">
+      <div class="panel__header">线上购买平台</div>
+      <div class="row">
+        <div class="col-3 channel-t1" v-for="item in online_data">
+          <a target="_blank" :href="item.url">
+            <p>{{item.name}}</p>
+            <img :src="item.logo_url" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="panel mt">
+      <div class="panel__header">线下直营体验店
+        <div class="u-right text-desc"><a :href="store_list_url">查看全部实体店 &gt;</a></div>
+      </div>
+      <div class="row">
+        <a :href="item.link_url" class="col-6 store" v-for="item in direct_data">
+          <div class="row__left">
+            <c:icon name="location2" />
+          </div>
+          <div class="row__content">
+            {{item.name}}
+            <div class="text-desc">{{item.address}}</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</c:layout>

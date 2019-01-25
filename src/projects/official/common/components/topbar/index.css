@@ -1,0 +1,16 @@
+
+.topbar {
+  background: $bg-gray;
+  line-height: 40px;
+  &__item {
+    margin: 0 15px;
+    [class^=icon-] {
+      margin: 0 15px;
+    }
+  }
+  .cartInfo{
+    &.has-goods{
+      color: #ee0a3b;
+    }
+  }
+}

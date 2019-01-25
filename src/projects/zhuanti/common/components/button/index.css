@@ -1,0 +1,13 @@
+.btn {
+  line-height: 3;
+  border: none;
+}
+
+.btn--primary {
+  color: #fff;
+  background: #253746
+}
+
+.btn--block {
+  width: 100%;
+}

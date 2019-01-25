@@ -1,0 +1,30 @@
+.f {
+  &__title {
+    font-weight: normal;
+    text-align: center;
+    font-size: 24px;
+  }
+  &__subtitle {
+    font-size: 24px;
+    border-bottom: $border;
+    font-weight: normal;
+    margin: 60px 0 36px;
+  }
+  .l-table {
+    table-layout: fixed;
+    &__item {
+      vertical-align: middle;
+    }
+  }
+  &__table {
+    line-height: 50px;
+    width: 100%;
+    td {
+      border-bottom: $border;
+    }
+  }
+}
+
+.gap-f {
+  padding-left: 50px;
+}

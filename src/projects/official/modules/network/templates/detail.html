@@ -1,0 +1,44 @@
+<!--服务网点-详情  -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <script slot="script">
+    var detail = __getJSON('detail')
+  </script>
+  <script .src="BAIDU_URL" slot="script"></script>
+  <script src="../scripts/detail.js" slot="script"></script>
+  <div class="container">
+    <img src="../images/banner.png" class="img-responsive">
+    <div class="row spot-map">
+      <div class="row__right" style="width:41.6%">
+        <div class="addr-detail">
+          <div class="addr-detail__title">{{detail.name}}<span class="label-rating" :class="detail.star">{{detail.star_name}}</span></div>
+          <div class="text-gray">地址：{{detail.address}}
+            <_ v-if="detail.work_time"><br>营业时间：{{detail.work_time}}</_>
+            <br>电话：{{detail.phone}}
+            <_ v-if="detail.traffic"><br>交通方式：{{detail.traffic}}</_>
+          </div>
+        </div>
+      </div>
+      <div class="row__content">
+        <div id="map" style="height:430px"></div>
+      </div>
+    </div>
+    <div class="spot-bottom">
+      <div class="spot-intro" v-if="detail.content">
+        <div class="spot-intro__title">{{detail.name}} 网点介绍</div>
+        <div class="text-desc">{{detail.content}}</div>
+      </div>
+      <div class="spot-intro">
+        <div class="spot-intro__title">当前地区服务网点</div>
+        <div class="text-desc">
+          <div class="row">
+            <div class="col-6" v-for="item,i in relations" :class="{cls:i%2===0}">
+              <a :href="item.link_url">{{item.name}}</a>
+              <br>地址：{{concat(item.province_name, item.city_name, item.area_name, item.address)}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</c:layout>

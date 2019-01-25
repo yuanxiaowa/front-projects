@@ -1,0 +1,46 @@
+
+
+.mask {
+  display: none;
+  position: fixed 0;
+  background: #000;
+  opacity: .5;
+  z-index: 3;
+}
+
+.dialog {
+  display: none;
+  position: fixed 0;
+  z-index: 3;
+  &-container {
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 800px;
+  }
+  &-header {
+    line-height: 40px;
+    height: 40px;
+  }
+  &-close {
+    font-style: normal;
+    font-size: 2em;
+    float: right;
+    margin-right: 12px;
+    color: $color-gray;
+    &:after {
+      content: '×';
+      cursor: pointer;
+    }
+  }
+  &-content {
+    text-align: center;
+    padding: 20px 0 80px;
+    .iconfont {
+      font-size: 3em;
+    }
+  }
+}

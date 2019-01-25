@@ -1,0 +1,26 @@
+<!--服务欢迎页  -->
+<c:layout-service .selected-index="2">
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <h3>
+    <c:icon name="smile" />欢迎使用{{product_info.name}}
+  </h3>
+  <h6>常见问题</h6>
+  <div class="list list--1">
+    <div class="list__item" v-for="item in question_list">
+      <a class="link" :href="item.url">{{item.title}}</a>
+    </div>
+  </div>
+  <h6>常用服务</h6>
+  <ul class="service-c">
+    <li class="link" .for="item in [
+        ['product_info.app_url','weibiaoti--6','App下载'],
+        ['instructions_info.file_url','doc','说明书下载'],
+        ['product_info.bbs_url','icon28','bbs论坛']
+      ]">
+      <a target="_blank" .:href="item[0]" .v-if="item[0]+'!==\'\''">
+        <c:icon .name="item[1]" />
+        <div>{%item[2]%}</div>
+      </a>
+    </li>
+  </ul>
+</c:layout-service>

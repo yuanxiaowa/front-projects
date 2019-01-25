@@ -1,0 +1,10 @@
+.breadcrumb {
+  line-height: 50px;
+  color: $color-gray;
+  &__item {
+    margin: 0 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

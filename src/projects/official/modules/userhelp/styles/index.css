@@ -1,0 +1,62 @@
+@import "../../guide/styles/index";
+.steps {
+  &__top {
+    margin-bottom: 70px;
+    text-align: center;
+  }
+  h3 {
+    margin: 3em 0 2em;
+  }
+  .row {
+    padding: 70px;
+    border-top: $border;
+  }
+}
+
+.agency {
+  padding: 0 11.1%;
+  &-top {
+    margin: 70px 0 80px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 36px;
+    margin: 0;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 16px 0;
+  }
+  &-wrap {
+    background: #f9f9f9;
+    overflow: hidden;
+  }
+  &__step {
+    margin-top: 40px;
+    .row__left {
+      font-size: 40px;
+      width: 80px;
+      &::after {
+        content: '/';
+        color: $color-gray;
+        font-weight: lighter;
+        margin-left: 18px;
+      }
+    }
+  }
+  &-contact {
+    margin-top: 70px;
+    padding-left: 80px;
+    h3 {
+      margin-bottom: 24px;
+    }
+    .row {
+      padding-bottom: 8px;
+    }
+    .row__content {
+      color: #666;
+    }
+  }
+}

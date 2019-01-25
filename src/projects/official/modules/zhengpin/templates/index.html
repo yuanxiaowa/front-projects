@@ -1,0 +1,17 @@
+<!--正品验证页  -->
+<c:layout nobreadcrumb='true'>
+  <link rel="stylesheet" href="../styles/zhengpin.css" __inline slot="style">
+  <div class="container zp">
+    <form id="zpform" :action="url_sn_search_do" method="post">
+      <h1>防伪验证 品质保证</h1>
+      <div class="zp-wrap">
+        <input name="sn_number" placeholder="请输入产品SN码" class="form-control" type="text">
+        <span class="has-error"></span>
+        <button class="btn btn--primary">立即验证</button>
+        <div class="text-gray">仅限2015年1月份之后购买的用户</div>
+      </div>
+    </form>
+    <include src="includes/bottom.html" :is-index="true" />
+  </div>
+  <script type="text/javascript" src="../scripts/zhengpin.js" __inline slot="script"></script>
+</c:layout>

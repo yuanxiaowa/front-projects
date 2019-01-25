@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="tab-history row">
+    <div class="col-3" v-for="menu,i in brand_menus">
+      <a class="link" :href="menu.url" :class="{'is-selected':menu.current}">
+        <span :class="'iconfont icon-brand-'+i"></span>
+        <div>{{menu.title}}</div>
+      </a>
+      <div class="list list--his" v-if="menu.list">
+        <a :href="submenu.url" class="list__item link" v-for="submenu in menu.list">{{submenu.title}}</a>
+      </div>
+    </div>
+  </div>
+</div>

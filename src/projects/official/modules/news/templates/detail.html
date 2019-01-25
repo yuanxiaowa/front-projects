@@ -1,0 +1,48 @@
+<!-- 资讯详情 -->
+<c:layout>
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <c:tab-history .selected-index="3" />
+  <div class="container">
+    <a :href="information_info.back_url">
+      <b>&lt;返回 </b>
+    </a>
+    <div class="newsdetail">
+      <h1>{{information_info.title}}</h1>
+      <div class="newsdetail__time">{{information_info.create_time}}</div>
+      <div class="newsdetail__content">{{information_info.content}}</div>
+      <div class="newsdetail__share">
+        <div class="bdsharebuttonbox">
+          <a href="#" class="bds_more" data-cmd="more"></a>
+          <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+          <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+          <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+          <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+          <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        </div>
+      </div>
+      <div class="row newsdetail-link">
+        <div class="row__left" v-if="information_pre_info">
+          <a :href="information_pre_info.url">上一篇：{{information_pre_info.title}}</a>
+        </div>
+        <div class="row__right" v-if="information_next_info">
+          <a :href="information_next_info.url">下一篇：{{information_next_info.title}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script slot="script">
+    window._bd_share_config = {
+      "common": {
+        "bdSnsKey": {},
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": "",
+        "bdStyle": "0",
+        "bdSize": "16"
+      },
+      "share": {}
+    };
+    (document.getElementsByTagName('head')[0] || document.body).appendChild(document.createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5);
+  </script>
+</c:layout>

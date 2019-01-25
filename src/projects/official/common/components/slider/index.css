@@ -1,0 +1,76 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 41.66%;
+  width: 100%; /* 不加ie有问题 */
+  text-align: center;
+  &-wrapper {
+    position: absolute 0;
+  }
+  &__item {
+    float: left;
+    size: 100%;
+    position: relative;
+  }
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3em;
+    cursor: pointer;
+    right: $pad;
+    background: rgba(255,255,255,.32);
+    font-weight: bold;
+    &:first-child {
+      right: auto;
+      left: $pad;
+    }
+  }
+  video {
+    size: 100%;
+    object-fit: cover;
+  }
+  img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__bullet {
+    position: absolute * 0 $pad;
+    text-align: center;
+    &__item {
+      display: inline-block;
+      margin: 0 4px;
+      border-radius: 50%;
+      size: 11px;
+      cursor: pointer;
+      background: #fff;
+      transition: opacity .3s;
+      opacity: .3;
+      &.is-selected {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.dsc {
+  position: absolute 20% 0 0;
+  color: #fff;
+  &__1 {
+    font-size: 12px;
+    color: #f1f1f1;
+  }
+  &__2 {
+    font-size: 60px;
+  }
+  &__3 {
+    font-weight: lighter;
+    font-size: 55px;
+    margin-top: -20px;
+    color: #f1f1f1;
+  }
+  &__4 {
+    margin-top: 110px;
+  }
+}

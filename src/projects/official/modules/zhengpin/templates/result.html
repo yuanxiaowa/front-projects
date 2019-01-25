@@ -1,0 +1,98 @@
+<!--正品验证结果页  -->
+<c:layout nobreadcrumb='true'>
+  <link rel="stylesheet" href="../styles/zhengpin.css" slot="style">
+
+  <div class="container">
+    <div class="zp">
+      <div class="text-center">
+        <!--验证成功-->
+        <_ v-if="status==1">
+          <img src="../images/6.jpg">
+          <div class="text-primary">
+            该产品为科沃斯正品，请放心使用！
+            <p class="text-gray">
+              SN码：{{sn_number}}
+            </p>
+          </div>
+          <div class="zp-wrap">
+            <form :action="url_sn_bind" method="post">
+              <input type="hidden" name="sn_number" :value="sn_number">
+              <button class="btn btn--primary">立即绑定</button>
+            </form>
+          </div>
+          <a :href="SHOP_URL+'/jifen'" class="zp-link" target="_blank">绑定会员获得哪些权益？</a>
+        </_>
+        <!--验证失败-->
+        <_ v-elif="status==2">
+          <img src="../images/5.jpg">
+          <p class="zp-red">SN码 “{{sn_number}}” 不存在或尚未维护！
+          </p>
+          <div class="text-gray">如有疑问，请咨询客服 &nbsp;
+            <c:kefu>
+              <span class="btn btn--dotted">
+                <img src="../images/3.jpg">联系客服</span>
+            </c:kefu>
+          </div>
+          <div class="zp-wrap">
+            <a :href="url_sn_search">
+              <span class="btn btn--primary">重新输入</span>
+            </a>
+          </div>
+        </_>
+        <!--绑定成功-->
+        <_ v-elif="status==3">
+          <img src="../images/4.jpg">
+          <div class="text-primary">
+            您已成功绑定SN码：
+            <br>{{sn_number}}的产品
+            <p class="text-gray">
+              您可以进入 个人中心/
+              <a :href="ACCOUNT_URL+'/member-product.html'" class="text-link">我的机器</a>
+              查看已绑定产品
+            </p>
+          </div>
+          <div class="zp-wrap">
+            <a :href="'/warranty-ecard/create?sn_code='+sn_number">
+              <span class="btn btn--primary">激活电子保修卡</span>
+            </a>
+          </div>
+          <div class="text-gray">(安全、便捷、一键上传、永不丢失，轻松享受保修服务)</div>
+        </_>
+        <!--重复绑定-->
+        <_ v-elif="status==4">
+          <img src="../images/2.jpg">
+          <p class="zp-red">SN码 “{{sn_number}}” 已被绑定，
+            <br>请勿重复绑定！
+          </p>
+          <div class="zp-mid">
+            <a :href="ACCOUNT_URL+'/member-product.html'" class="zp-link">查看已绑定产品</a>
+          </div>
+          <div class="text-gray">如有疑问，请咨询客服 &nbsp;
+            <c:kefu>
+              <span class="btn btn--dotted">
+                <img src="../images/3.jpg">联系客服</span>
+            </c:kefu>
+          </div>
+        </_>
+        <_ v-elif="status==5">
+          <img src="../images/2.jpg">
+          <p class="zp-red">您还未绑定手机号,请先绑定手机号！
+          </p>
+          <div class="text-gray">如有疑问，请咨询客服 &nbsp;
+            <c:kefu>
+              <span class="btn btn--dotted">
+                <img src="../images/3.jpg">联系客服</span>
+            </c:kefu>
+          </div>
+          <div class="zp-wrap">
+            <a :href="url_mobile_bind">
+              <span class="btn btn--primary">立即绑定</span>
+            </a>
+          </div>
+        </_>
+      </div>
+      <include src="includes/bottom.html" />
+    </div>
+  </div>
+  <script type="text/javascript" src="//qas-static.ecovacs.cn/p/js/base.js" slot="script"></script>
+</c:layout>

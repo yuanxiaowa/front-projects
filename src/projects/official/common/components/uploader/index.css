@@ -1,0 +1,57 @@
+.uploader {
+  display: inline-block;
+  &-picker {
+    size: 160px 110px;
+    color: $color-primary;
+    border: 1px dashed;
+    position: relative;
+    display: inline-block;
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+    }
+    &::before {
+      transform: translateX(-50%);
+      border-top: 2px solid;
+      width: 40px;
+    }
+    &::after {
+      transform: translateY(-50%);
+      border-left: 2px solid;
+      height: 40px;
+    }
+    input {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+  }
+  &-area {
+    size: 180px 110px;
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    img {
+      size: 100%;
+    }
+    &__close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: #fff rgba(0, 0, 0, .5);
+      size: 20px;
+      line-height: 20px;
+      text-align: center;
+      cursor: pointer;
+      &:before {
+        content: '×';
+        display: block;
+        transform: scale(1.5)
+      }
+    }
+  }
+}

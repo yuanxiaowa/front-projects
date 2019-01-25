@@ -1,0 +1,24 @@
+{
+  "hello": "year1",
+  "world": 234,
+  "fff": [234, 456],
+  "fff1": ["fdasf探讨", "买买买"],
+  "ttt": [{
+    "a-x": "ppp",
+    "b": "lalalagggg"
+  }, {
+    "a-x": "fdasf234",
+    "b": "dddddddddddd"
+  }, {
+    "a-x": "----------",
+    "b": "ggggggggg"
+  }],
+  "tty": [{
+    "aL": 1,
+    "bL": "4444"
+  }, {
+    "aL": 567,
+    "bL": "oooo"
+  }],
+  "kkk": [9999, 678]
+}

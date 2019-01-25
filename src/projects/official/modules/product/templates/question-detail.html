@@ -1,0 +1,68 @@
+<!--常见问题答案  -->
+<c:layout-service>
+  <link rel="stylesheet" href="../styles/index.css" slot="style">
+  <script slot="script">
+    var qid = __get('question_info.id');
+    var rlqs = __getJSON('question_relation_breakdown_info');
+  </script>
+  <script src="../scripts/question-detail.js" slot="script"></script>
+  <div class="service-con1">
+    <a :href="question_list_url">返回问题列表</a>
+  </div>
+  <div class="service-content">
+    <h2 style="font-size:1.3em">{{question_info.title}}</h2>
+    <p>{{question_info.content}}</p>
+    <div class="rlqs" id="rlqs"></div>
+  </div>
+  <div class="service-uf">
+    <div class="u-right service-uf__kw" v-if="question_info.question_tag_info">问题标签：
+      <span v-for="item in question_info.question_tag_info">{{item}}</span>
+    </div>
+    <div class="row">
+      <div class="row__left service-uf__t">您对答案满意吗?</div>
+      <div class="row__content">
+        <div class="l-table service-t1" id="helper">
+          <a href="" class="l-table__item">
+            <c:icon name="like_fill" /> 有帮助
+          </a>
+          <a href="" class="l-table__item">
+            <c:icon name="like" /> 没帮助
+          </a>
+        </div>
+        <div class="service-t2">
+          <c:icon name="xiaolian" /> 谢谢
+        </div>
+        <div class="service-t3">
+          <div class="row">
+            <div class="row__left">
+              <c:icon name="kefu" />
+            </div>
+            <div class="row__content">
+              <c:kefu>
+                在线咨询
+                <div class="service-t3__i">立即前往 &gt;</div>
+              </c:kefu>
+            </div>
+          </div>
+          <div class="row">
+            <div class="row__left">
+              <c:icon name="dianhua" />
+            </div>
+            <div class="row__content">
+              服务热线
+              <div class="service-t3__i">{%teleNum%}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <_ v-if="question_relation_list">
+    <h3 style="margin-top:5em">相关问题</h3>
+    <ul class="list list--1">
+      <li class="list__item" v-for="item in question_relation_list">
+        <a :href="item.url">{{item.title}}</a>
+      </li>
+    </ul>
+  </_>
+</c:layout-service>

@@ -1,0 +1,70 @@
+<c:layout>
+  <link rel="stylesheet" type="text/css" href="../styles/trial.css" __main>
+  <div class="wrap-full j-wrap">
+    <form action="" class="wrap-con" method="post" style="display:none">
+      <div class="trial-banner">
+        <img src="../images/banner.png" alt="">
+      </div>
+      <div class="trial-title">
+        <h1>感恩•筑梦</h1>
+        <h2>扫地机器人新品免费试用</h2>
+      </div>
+      <div class="form-line">
+        <input name="real_name" type="text" class="form-control" placeholder="请输入您的姓名">
+      </div>
+      <div class="form-line">
+        <input name="address" type="text" class="form-control" placeholder="请输入您的地址">
+      </div>
+      <div class="form-line">
+        <input name="mobile" type="text" class="form-control" placeholder="请输入您的手机号码">
+      </div>
+      <div class="form-line row j-captcha-line" style="display:none">
+        <div class="row__right">
+          <img class="vcode j-captcha" :src="API_URL+'/captcha/showImage'" alt="">
+        </div>
+        <div class="row__main">
+          <input name="code" type="text" class="form-control" placeholder="图形验证码">
+        </div>
+      </div>
+      <div class="form-line row">
+        <div class="row__right">
+          <button class="btn-normal j-getcode" style="padding:0 1em;margin-left:.5em" type="button">获取</button>
+        </div>
+        <div class="row__main">
+          <input name="mobileCaptcha" type="text" class="form-control" placeholder="验证码">
+        </div>
+      </div>
+      <div class="form-line">
+        <button class="btn-normal" id="sign">立即报名</button>
+      </div>
+      <div class="form-line">
+      </div>
+      <div class="form-line tc">
+        <a class="link-dark j-show-dialog" href="">活动规则</a>
+      </div>
+    </form>
+    <c:dialog js-export="{default as setDialog,$mask}" id="dialog">
+      <include src="partials/rule.html"></include>
+    </c:dialog>
+    <img class="trial-subscribe j-subs" src="../images/subscribe.png">
+    <img id="share" src="../images/trial-share.png" alt="" class="trial-share">
+    <div class="wrap-con trial-s">
+      <img src="../images/b2.png">
+      <button class="btn-normal" v-attr="{disabled:past_due}" id="to_sign">立即报名</button>
+    </div>
+  </div>
+  <include src="partials/bottom.html" />
+  <!-- <include src="partials/anim.html" /> -->
+  <script>
+    window.subscribe = __get('subscribe|json');
+    window.WECHAT_URL = __get('WECHAT_URL|json');
+    window.jsSDKConfigCondition = __get('jsSDKConfigCondition')
+    window.jsSDKConfigJSON = __get('jsSDKConfigJSON');
+    window.openid = __get('openid|json');
+    window.CDN_URL = __get('CDN_URL|json');
+    window.link = __get('link|json');
+    window.click_action = __get('click_action|json');
+    window._csrf = __get('_csrf|json')
+  </script>
+  <script src="../scripts/apply.js" __main></script>
+</c:layout>

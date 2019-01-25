@@ -1,0 +1,11 @@
+<c:layout>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore suscipit illum, ex, corporis soluta atque molestiae ad consequuntur ratione sunt libero nesciunt architecto, earum rem. Vel iusto assumenda architecto voluptatibus?
+  <div id="pp">{{a}}</div>
+  <include src="includes/partial1.html#b" />
+  <img src="../images/i1.svg" alt="">
+  <img src="../images/i2.svg" alt="">
+  <script>
+    var _temp = __template('#pp', window.dt)
+    console.log(_temp, __get('hello'));
+  </script>
+</c:layout>

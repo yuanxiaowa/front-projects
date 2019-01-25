@@ -1,0 +1,16 @@
+{
+  "name": "你好",
+  "email": "yuanxiaowa@qq.com",
+  "pp": true,
+  "pp2": false,
+  "items": [{
+    "a": "ttt",
+    "b": 234,
+    "checked": true
+  }, {
+    "a": "ttt2",
+    "b": 2344,
+    "checked": false
+  }],
+  "items2": ["aaa", "bbb"]
+}
